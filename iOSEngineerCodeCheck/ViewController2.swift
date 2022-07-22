@@ -30,7 +30,7 @@ class ViewController2: UIViewController {
         
         languageLabel.text = "Written in \(repo["language"] as? String ?? "")"
         starsCountLabel.text = "\(repo["stargazers_count"] as? Int ?? 0) stars"
-        watchersCountLabel.text = "\(repo["wachers_count"] as? Int ?? 0) watchers"
+        watchersCountLabel.text = "\(repo["watchers_count"] as? Int ?? 0) watchers"
         forksCountLabel.text = "\(repo["forks_count"] as? Int ?? 0) forks"
         openIssuesCountLabel.text = "\(repo["open_issues_count"] as? Int ?? 0) open issues"
         getImage()
