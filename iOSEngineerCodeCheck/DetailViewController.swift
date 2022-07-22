@@ -10,11 +10,8 @@ import UIKit
 
 class DetailViewController: UIViewController {
     @IBOutlet private weak var iconImageView: UIImageView!
-
     @IBOutlet private weak var titleLabel: UILabel!
-
     @IBOutlet private weak var languageLabel: UILabel!
-
     @IBOutlet private weak var starsCountLabel: UILabel!
     @IBOutlet private weak var watchersCountLabel: UILabel!
     @IBOutlet private weak var forksCountLabel: UILabel!
