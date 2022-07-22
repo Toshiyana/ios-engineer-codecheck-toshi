@@ -10,16 +10,16 @@ import UIKit
 
 class ViewController2: UIViewController {
     
-    @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet private weak var iconImageView: UIImageView!
     
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet private weak var titleLabel: UILabel!
     
-    @IBOutlet weak var languageLabel: UILabel!
+    @IBOutlet private weak var languageLabel: UILabel!
     
-    @IBOutlet weak var starsCountLabel: UILabel!
-    @IBOutlet weak var watchersCountLabel: UILabel!
-    @IBOutlet weak var forksCountLabel: UILabel!
-    @IBOutlet weak var openIssuesCountLabel: UILabel!
+    @IBOutlet private weak var starsCountLabel: UILabel!
+    @IBOutlet private weak var watchersCountLabel: UILabel!
+    @IBOutlet private weak var forksCountLabel: UILabel!
+    @IBOutlet private weak var openIssuesCountLabel: UILabel!
     
     var vc1: ViewController!
         
