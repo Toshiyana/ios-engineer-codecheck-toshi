@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController2: UIViewController {
+class DetailViewController: UIViewController {
     
     @IBOutlet private weak var iconImageView: UIImageView!
     
@@ -21,7 +21,7 @@ class ViewController2: UIViewController {
     @IBOutlet private weak var forksCountLabel: UILabel!
     @IBOutlet private weak var openIssuesCountLabel: UILabel!
     
-    var vc1: ViewController!
+    var vc1: SearchListViewController!
         
     override func viewDidLoad() {
         super.viewDidLoad()
