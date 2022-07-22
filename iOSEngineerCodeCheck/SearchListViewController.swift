@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UITableViewController {
+class SearchListViewController: UITableViewController {
 
     @IBOutlet private weak var searchBar: UISearchBar!
     
@@ -29,7 +29,7 @@ class ViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "Detail"{
-            let dtl = segue.destination as! ViewController2
+            let dtl = segue.destination as! DetailViewController
             dtl.vc1 = self
         }
         
@@ -60,7 +60,7 @@ class ViewController: UITableViewController {
 }
 
 // MARK: - UISearchBarDelegate
-extension ViewController: UISearchBarDelegate {
+extension SearchListViewController: UISearchBarDelegate {
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
         // ↓こうすれば初期のテキストを消せる
         searchBar.text = ""
