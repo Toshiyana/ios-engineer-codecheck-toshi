@@ -1,0 +1,50 @@
+# Lint対象に追加するパス
+included:
+- iOSEngineerCodeCheck
+
+# Lint対象から除外するパス
+excluded:
+- Carthage
+- Pods
+- iOSEngineerCodeCheckTests
+- iOSEngineerCodeCheckUITests
+
+# 基本的に全てのオプトインルールを有効化した上で、無効にしたいもののみdisabled_rulesに欄に記載し、無効化。
+
+# 無効にするルール
+# disabled_rules:
+
+# defaultルール以外にopt-inから採用するルール
+opt_in_rules:
+- anyobject_protocol
+- array_init
+- closure_spacing
+- collection_alignment
+- conditional_returns_on_newline
+- contains_over_first_not_nil
+- discouraged_object_literal
+- empty_count
+- empty_string
+- identical_operands
+- joined_default_parameter
+- last_where
+- legacy_random
+- legacy_multiple
+- lower_acl_than_parent
+- modifier_order
+- operator_usage_whitespace
+- operator_whitespace
+- overridden_super_call
+- private_action
+- prohibited_super_call
+- redundant_nil_coalescing
+- trailing_closure
+- unused_import
+- vertical_parameter_alignment_on_call
+- vertical_whitespace_closing_braces
+- vertical_whitespace_opening_braces
+
+# 1行の文字列制限
+line_length:
+- 200   # warning
+- 300   # error
