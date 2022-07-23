@@ -24,6 +24,13 @@ extension GitHubTarget: TargetType {
         }
     }
     
+    var method: Method {
+        switch self {
+        case .searchRepository:
+            return .get
+        }
+    }
+    
     var parameters: [String: Any] {
         // GitHubAPIのDefaultの設定
         var parameter = [
