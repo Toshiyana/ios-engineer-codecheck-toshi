@@ -11,7 +11,7 @@ import UIKit
 class SearchListViewController: UITableViewController {
     @IBOutlet private weak var searchBar: UISearchBar!
 
-    var repo: [[String: Any]] = []
+    private var repo: GitHubResponse?
 
     var task: URLSessionTask?
     var idx: Int?
@@ -24,28 +24,48 @@ class SearchListViewController: UITableViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "Detail"{
-            let dtl = segue.destination as? DetailViewController
-            dtl?.vc1 = self
+        if segue.identifier == "Detail" {
+            if let detailVC = segue.destination as? DetailViewController, let repo = repo {
+                detailVC.repo = repo
+            }
         }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return repo.count
+        return repo?.items.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        let repo = repo[indexPath.row]
-        cell.textLabel?.text = repo["full_name"] as? String ?? ""
-        cell.detailTextLabel?.text = repo["language"] as? String ?? ""
-        cell.tag = indexPath.row
+        if let repo = repo {
+            let repo = repo.items[indexPath.row]
+            cell.textLabel?.text = repo.fullName
+            cell.detailTextLabel?.text = repo.language
+            cell.tag = indexPath.row
+        }
         return cell
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         idx = indexPath.row
         performSegue(withIdentifier: "Detail", sender: self)
+    }
+
+    // MARK: - API
+    private func getGitHubResponse(query: String) {
+        GitHubAPI.shared.searchRepository(keyValue: ["q": query]) { [weak self] result in
+            guard let strongSelf = self else { return }
+            switch result {
+            case .success(let gitHubResponse):
+                print("DEBUG: gitHubResponse:: \(gitHubResponse)")
+                strongSelf.repo = gitHubResponse
+                DispatchQueue.main.async {
+                    strongSelf.tableView.reloadData()
+                }
+            case .failure(let error):
+                print("getGitHubResponse error: \(error.localizedDescription)")
+            }
+        }
     }
 }
 
@@ -56,27 +76,10 @@ extension SearchListViewController: UISearchBarDelegate {
         return true
     }
 
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        task?.cancel()
-    }
-
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let word = searchBar.text, !word.isEmpty else {
             return
         }
-
-        if let url = URL(string: "https://api.github.com/search/repositories?q=\(word)")  {
-            task = URLSession.shared.dataTask(with: url) { (data, _, _) in
-                if let obj = try? JSONSerialization.jsonObject(with: data!) as? [String: Any] {
-                    if let items = obj["items"] as? [[String: Any]] {
-                        self.repo = items
-                        DispatchQueue.main.async {
-                            self.tableView.reloadData()
-                        }
-                    }
-                }
-            }
-            task?.resume()
-        }
+        getGitHubResponse(query: word)
     }
 }
