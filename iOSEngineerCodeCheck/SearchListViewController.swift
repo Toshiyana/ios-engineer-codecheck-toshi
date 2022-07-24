@@ -19,8 +19,12 @@ class SearchListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        searchBar.text = "GitHubのリポジトリを検索できるよー"
+        setupUI()
+    }
+
+    private func setupUI() {
         searchBar.delegate = self
+        searchBar.placeholder = "リポジトリ名で検索"
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -71,11 +75,6 @@ class SearchListViewController: UITableViewController {
 
 // MARK: - UISearchBarDelegate
 extension SearchListViewController: UISearchBarDelegate {
-    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
-        searchBar.text = ""
-        return true
-    }
-
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let word = searchBar.text, !word.isEmpty else {
             return
