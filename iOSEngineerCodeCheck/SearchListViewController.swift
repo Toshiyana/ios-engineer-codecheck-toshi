@@ -11,10 +11,8 @@ import UIKit
 class SearchListViewController: UITableViewController {
     @IBOutlet private weak var searchBar: UISearchBar!
 
-    private var repo: GitHubResponse?
-
-    var task: URLSessionTask?
-    var idx: Int?
+    private var repoItems: [RepoItem]?
+    private var repoItemsIndex: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,29 +27,28 @@ class SearchListViewController: UITableViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Detail" {
-            if let detailVC = segue.destination as? DetailViewController, let repo = repo {
-                detailVC.repo = repo
+            if let detailVC = segue.destination as? DetailViewController, let repoItems = repoItems {
+                detailVC.repoItem = repoItems[repoItemsIndex ?? 0]
             }
         }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return repo?.items.count ?? 0
+        return repoItems?.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        if let repo = repo {
-            let repo = repo.items[indexPath.row]
-            cell.textLabel?.text = repo.fullName
-            cell.detailTextLabel?.text = repo.language
-            cell.tag = indexPath.row
+        if let repoItems = repoItems {
+            let repoItem = repoItems[indexPath.row]
+            cell.textLabel?.text = repoItem.fullName
+            cell.detailTextLabel?.text = repoItem.language
         }
         return cell
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        idx = indexPath.row
+        repoItemsIndex = indexPath.row
         performSegue(withIdentifier: "Detail", sender: self)
     }
 
@@ -62,7 +59,7 @@ class SearchListViewController: UITableViewController {
             switch result {
             case .success(let gitHubResponse):
                 print("DEBUG: gitHubResponse:: \(gitHubResponse)")
-                strongSelf.repo = gitHubResponse
+                strongSelf.repoItems = gitHubResponse.items
                 DispatchQueue.main.async {
                     strongSelf.tableView.reloadData()
                 }
