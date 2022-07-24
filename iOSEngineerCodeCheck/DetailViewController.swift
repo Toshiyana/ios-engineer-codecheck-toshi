@@ -17,35 +17,40 @@ class DetailViewController: UIViewController {
     @IBOutlet private weak var forksCountLabel: UILabel!
     @IBOutlet private weak var openIssuesCountLabel: UILabel!
 
-    var vc1: SearchListViewController!
+    var repoItem: RepoItem?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let repo = vc1.repo[vc1.idx]
-
-        languageLabel.text = "Written in \(repo["language"] as? String ?? "")"
-        starsCountLabel.text = "\(repo["stargazers_count"] as? Int ?? 0) stars"
-        watchersCountLabel.text = "\(repo["watchers_count"] as? Int ?? 0) watchers"
-        forksCountLabel.text = "\(repo["forks_count"] as? Int ?? 0) forks"
-        openIssuesCountLabel.text = "\(repo["open_issues_count"] as? Int ?? 0) open issues"
-        getImage()
+        setupUI()
     }
 
-    func getImage() {
-        let repo = vc1.repo[vc1.idx]
-
-        titleLabel.text = repo["full_name"] as? String
-
-        if let owner = repo["owner"] as? [String: Any] {
-            if let imgURL = owner["avatar_url"] as? String {
-                URLSession.shared.dataTask(with: URL(string: imgURL)!) { (data, _, _) in
-                    let img = UIImage(data: data!)!
-                    DispatchQueue.main.async {
-                        self.iconImageView.image = img
-                    }
-                }.resume()
-            }
+    private func setupUI() {
+        if let repoItem = repoItem {
+            languageLabel.text = "Written in \(repoItem.language)"
+            starsCountLabel.text = "\(repoItem.stargazersCount) stars"
+            watchersCountLabel.text = "\(repoItem.watchersCount) watchers"
+            forksCountLabel.text = "\(repoItem.forksCount) forks"
+            openIssuesCountLabel.text = "\(repoItem.openIssuesCount) open issues"
+            //            getImage()
         }
     }
+
+    //    func getImage() {
+    ////        let repo = vc1.repo[vc1.idx]
+    //        let repo = repo
+    //
+    //        titleLabel.text = repo["full_name"] as? String
+    //
+    //        if let owner = repo["owner"] as? [String: Any] {
+    //            if let imgURL = owner["avatar_url"] as? String {
+    //                URLSession.shared.dataTask(with: URL(string: imgURL)!) { (data, _, _) in
+    //                    let img = UIImage(data: data!)!
+    //                    DispatchQueue.main.async {
+    //                        self.iconImageView.image = img
+    //                    }
+    //                }.resume()
+    //            }
+    //        }
+    //    }
 }
