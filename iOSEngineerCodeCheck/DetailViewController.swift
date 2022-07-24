@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class DetailViewController: UIViewController {
     @IBOutlet private weak var iconImageView: UIImageView!
@@ -32,25 +33,7 @@ class DetailViewController: UIViewController {
             watchersCountLabel.text = "\(repoItem.watchersCount) watchers"
             forksCountLabel.text = "\(repoItem.forksCount) forks"
             openIssuesCountLabel.text = "\(repoItem.openIssuesCount) open issues"
-            //            getImage()
+            iconImageView.kf.setImage(with: repoItem.owner.avatarUrl)
         }
     }
-
-    //    func getImage() {
-    ////        let repo = vc1.repo[vc1.idx]
-    //        let repo = repo
-    //
-    //        titleLabel.text = repo["full_name"] as? String
-    //
-    //        if let owner = repo["owner"] as? [String: Any] {
-    //            if let imgURL = owner["avatar_url"] as? String {
-    //                URLSession.shared.dataTask(with: URL(string: imgURL)!) { (data, _, _) in
-    //                    let img = UIImage(data: data!)!
-    //                    DispatchQueue.main.async {
-    //                        self.iconImageView.image = img
-    //                    }
-    //                }.resume()
-    //            }
-    //        }
-    //    }
 }
