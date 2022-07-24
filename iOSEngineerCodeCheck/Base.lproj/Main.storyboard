@@ -128,12 +128,14 @@
                         <constraints>
                             <constraint firstItem="Iim-eb-8Ad" firstAttribute="leading" secondItem="srK-fe-i1b" secondAttribute="leading" constant="20" id="EMR-2C-CyU"/>
                             <constraint firstItem="4q1-pG-WSB" firstAttribute="top" secondItem="Iim-eb-8Ad" secondAttribute="bottom" constant="28" id="G2L-KM-330"/>
-                            <constraint firstItem="4q1-pG-WSB" firstAttribute="centerX" secondItem="Iim-eb-8Ad" secondAttribute="centerX" id="Ght-Nb-HEu"/>
                             <constraint firstItem="srK-fe-i1b" firstAttribute="trailing" secondItem="Iim-eb-8Ad" secondAttribute="trailing" constant="20" id="IgU-EN-fM3"/>
+                            <constraint firstItem="srK-fe-i1b" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4q1-pG-WSB" secondAttribute="trailing" constant="20" id="L6m-09-xNR"/>
                             <constraint firstItem="oOe-O2-3RS" firstAttribute="top" secondItem="4q1-pG-WSB" secondAttribute="bottom" constant="22.5" id="VNZ-tF-Oxe"/>
                             <constraint firstItem="oOe-O2-3RS" firstAttribute="width" secondItem="Iim-eb-8Ad" secondAttribute="width" id="dPu-j0-Myp"/>
                             <constraint firstItem="oOe-O2-3RS" firstAttribute="centerX" secondItem="4q1-pG-WSB" secondAttribute="centerX" id="kVV-YK-ePr"/>
+                            <constraint firstItem="4q1-pG-WSB" firstAttribute="centerX" secondItem="4gp-25-lRZ" secondAttribute="centerX" id="pjz-I9-jiJ"/>
                             <constraint firstItem="Iim-eb-8Ad" firstAttribute="centerY" secondItem="srK-fe-i1b" secondAttribute="centerY" multiplier="0.7" id="ruB-l0-4VM"/>
+                            <constraint firstItem="4q1-pG-WSB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="srK-fe-i1b" secondAttribute="leading" constant="20" id="ruz-bf-kDz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="J6o-vL-S1z"/>
@@ -149,7 +151,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rj0-Ld-RTn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="230" y="137"/>
+            <point key="canvasLocation" x="228.98550724637684" y="136.60714285714286"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hWi-qa-NBR">
