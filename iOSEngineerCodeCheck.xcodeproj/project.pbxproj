@@ -127,6 +127,31 @@
 			path = Moya;
 			sourceTree = "<group>";
 		};
+		99F3AF6D288D9986009927E8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				99F3AF5E288BB538009927E8 /* GitHubResponse.swift */,
+				99F3AF65288C32D0009927E8 /* Moya */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		99F3AF6F288D9A05009927E8 /* SearchList */ = {
+			isa = PBXGroup;
+			children = (
+				BFD945E2244DC5E80012785A /* SearchListViewController.swift */,
+			);
+			path = SearchList;
+			sourceTree = "<group>";
+		};
+		99F3AF70288D9A39009927E8 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				BF0A658C244F2A3B00280FA6 /* DetailViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		BFD945D2244DC5E80012785A = {
 			isa = PBXGroup;
 			children = (
@@ -152,12 +177,11 @@
 		BFD945DD244DC5E80012785A /* iOSEngineerCodeCheck */ = {
 			isa = PBXGroup;
 			children = (
-				99F3AF5E288BB538009927E8 /* GitHubResponse.swift */,
-				99F3AF65288C32D0009927E8 /* Moya */,
+				99F3AF6F288D9A05009927E8 /* SearchList */,
+				99F3AF70288D9A39009927E8 /* Detail */,
+				99F3AF6D288D9986009927E8 /* Model */,
 				BFD945DE244DC5E80012785A /* AppDelegate.swift */,
 				BFD945E0244DC5E80012785A /* SceneDelegate.swift */,
-				BFD945E2244DC5E80012785A /* SearchListViewController.swift */,
-				BF0A658C244F2A3B00280FA6 /* DetailViewController.swift */,
 				BFD945E4244DC5E80012785A /* Main.storyboard */,
 				BFD945E7244DC5EB0012785A /* Assets.xcassets */,
 				BFD945E9244DC5EB0012785A /* LaunchScreen.storyboard */,
