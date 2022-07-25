@@ -7,7 +7,9 @@ target 'iOSEngineerCodeCheck' do
 
   # Pods for iOSEngineerCodeCheck
   # RxSwiftはSPMでバグがあるのでPodsを利用
-  pod 'Moya', '~> 15.0'# MoyaはRxSwift依存のためPodsを利用
+  pod 'RxSwift', '6.5.0'
+  pod 'RxCocoa', '6.5.0'
+  pod 'Moya/RxSwift', '~> 15.0'
 
   target 'iOSEngineerCodeCheckTests' do
     inherit! :search_paths
