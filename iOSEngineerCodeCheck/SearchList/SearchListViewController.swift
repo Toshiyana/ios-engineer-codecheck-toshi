@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchListViewController: UITableViewController {
+final class SearchListViewController: UITableViewController {
     @IBOutlet private weak var searchBar: UISearchBar!
 
     private var repoItems: [RepoItem]?
