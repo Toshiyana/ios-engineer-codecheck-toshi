@@ -6,39 +6,41 @@
 //  Copyright © 2022 YUMEMI Inc. All rights reserved.
 //
 
-import Foundation
+import RxSwift
 import Moya
 
-typealias CompletionHandler<T> = (Result<T, MoyaError>) -> Void
-
 final class GitHubAPI {
-    static let shared = GitHubAPI()
-
     private let provider = MoyaProvider<GitHubTarget>()
-
-    func searchRepository(keyValue: [String: Any], completion: @escaping CompletionHandler<GitHubResponse>) {
-        provider.request(.searchRepository(keyValue: keyValue)) { [weak self] result in
-            guard let strongSelf = self else { return }
-            switch result {
-            case .success(let response):
-                completion(strongSelf.decodeToGitHubResponse(response: response))
-            case .failure(let moyaError):
-                completion(.failure(moyaError))
+    
+    func searchRepository(keyValue: [String: Any]) throws -> Single<GitHubResponse> {
+        return Single<GitHubResponse>.create { [provider] observer in
+            provider.request(
+                .searchRepository(keyValue: keyValue)) { [weak self] response in
+                    guard let strongSelf = self else { return }
+                    switch response {
+                    case .success(let response):
+                        observer(strongSelf.decodeToGitHubResponse(response: response))
+                    case .failure:
+                        observer(.failure(GitHubAPIError.responseError))
+                    }
             }
+            return Disposables.create()
         }
     }
-
-    private func decodeToGitHubResponse(response: Response) -> Result<GitHubResponse, MoyaError> {
+    
+    private func decodeToGitHubResponse(response: Response) -> Result<GitHubResponse, Error> {
         do {
             let decoder = JSONDecoder()
             let response = try response.filterSuccessfulStatusAndRedirectCodes()
             let gitHubResponse = try response.map(GitHubResponse.self, using: decoder)
             return .success(gitHubResponse)
-        } catch let error {
-            guard let moyaError = error as? MoyaError else {
-                fatalError("Downcast to MoyaError has an error.")
-            }
-            return .failure(moyaError)
+        } catch {
+            return .failure(GitHubAPIError.decodeError)
         }
     }
+}
+
+enum GitHubAPIError: Error {
+    case decodeError
+    case responseError
 }
