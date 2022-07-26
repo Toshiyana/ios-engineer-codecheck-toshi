@@ -7,75 +7,69 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 final class SearchListViewController: UITableViewController {
     @IBOutlet private weak var searchBar: UISearchBar!
 
-    private var repoItems: [RepoItem]?
-    private var repoItemsIndex: Int?
+    private let viewModel = SearchListViewModel()
+    private let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.dataSource = nil
+        tableView.delegate = nil
+
         setupUI()
+        setupViewModel()
     }
 
     private func setupUI() {
-        searchBar.delegate = self
         searchBar.placeholder = "リポジトリ名で検索"
+        tableView.register(SearchListCell.nib(), forCellReuseIdentifier: SearchListCell.identifier)
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "Detail" {
-            if let detailVC = segue.destination as? DetailViewController, let repoItems = repoItems {
-                detailVC.repoItem = repoItems[repoItemsIndex ?? 0]
-            }
-        }
-    }
+    private func setupViewModel() {
+        // MARK: - Inputs
+        searchBar.rx.text.orEmpty
+            .bind(to: viewModel.inputs.searchBarText)
+            .disposed(by: disposeBag)
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return repoItems?.count ?? 0
-    }
+        searchBar.rx.searchButtonClicked
+            .bind(to: viewModel.inputs.searchButtonClicked)
+            .disposed(by: disposeBag)
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        if let repoItems = repoItems {
-            let repoItem = repoItems[indexPath.row]
-            cell.textLabel?.text = repoItem.fullName
-            cell.detailTextLabel?.text = repoItem.language
-        }
-        return cell
-    }
+        tableView.rx.itemSelected
+            .bind(to: viewModel.inputs.itemSelected)
+            .disposed(by: disposeBag)
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        repoItemsIndex = indexPath.row
-        performSegue(withIdentifier: "Detail", sender: self)
-    }
-
-    // MARK: - API
-    private func getGitHubResponse(query: String) {
-        GitHubAPI.shared.searchRepository(keyValue: ["q": query]) { [weak self] result in
-            guard let strongSelf = self else { return }
-            switch result {
-            case .success(let gitHubResponse):
-                print("DEBUG: gitHubResponse:: \(gitHubResponse)")
-                strongSelf.repoItems = gitHubResponse.items
-                DispatchQueue.main.async {
-                    strongSelf.tableView.reloadData()
+        // MARK: - Outputs
+        viewModel.outputs.repoItems
+            .bind(to: tableView.rx.items) { tableView, _, repoItem in
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchListCell.identifier) as? SearchListCell else {
+                    return UITableViewCell()
                 }
-            case .failure(let error):
-                print("getGitHubResponse error: \(error.localizedDescription)")
+                cell.configure(avatarImageUrl: repoItem.owner.avatarUrl,
+                               repoName: repoItem.fullName)
+                return cell
             }
-        }
+            .disposed(by: disposeBag)
+
+        viewModel.outputs.transitionToRepoItemDetail
+            .bind(to: transitionToRepoItemDetail)
+            .disposed(by: disposeBag)
     }
 }
 
-// MARK: - UISearchBarDelegate
-extension SearchListViewController: UISearchBarDelegate {
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let word = searchBar.text, !word.isEmpty else {
-            return
+// MARK: - Custom Binder
+extension SearchListViewController {
+    private var transitionToRepoItemDetail: Binder<RepoItem> {
+        return Binder(self) { vc, repoItem in
+            let detailVC = UIStoryboard(name: "DetailViewController", bundle: nil).instantiateInitialViewController() as! DetailViewController
+            detailVC.repoItem = repoItem
+            vc.navigationController?.pushViewController(detailVC, animated: true)
         }
-        getGitHubResponse(query: word)
     }
 }
