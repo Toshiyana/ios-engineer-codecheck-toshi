@@ -11,7 +11,7 @@ import Moya
 
 final class GitHubAPI {
     private static let provider = MoyaProvider<GitHubTarget>()
-    
+
     static func searchRepository(keyValue: [String: Any]) throws -> Observable<GitHubResponse> {
         return provider.rx.request(
             .searchRepository(keyValue: keyValue))
