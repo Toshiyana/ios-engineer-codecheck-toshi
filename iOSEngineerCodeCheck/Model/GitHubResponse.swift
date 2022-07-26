@@ -77,7 +77,7 @@ struct RepoItem: Codable, Identifiable {
     //    let size: Int
     let stargazersCount: Int
     let watchersCount: Int
-    let language: String
+    let language: String?
     //    let hasIssues: Bool
     //    let hasProjects: Bool
     //    let hasDownloads: Bool

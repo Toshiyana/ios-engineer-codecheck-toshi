@@ -33,7 +33,7 @@ final class DetailViewController: UIViewController {
     private func setupUI() {
         if let repoItem = repoItem {
             titleLabel.text = repoItem.fullName
-            languageLabel.text = "Written in \(repoItem.language)"
+            languageLabel.text = "Written in \(repoItem.language ?? "")"
             starsCountLabel.text = "\(repoItem.stargazersCount) stars"
             watchersCountLabel.text = "\(repoItem.watchersCount) watchers"
             forksCountLabel.text = "\(repoItem.forksCount) forks"
