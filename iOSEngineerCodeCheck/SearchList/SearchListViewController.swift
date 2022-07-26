@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import PKHUD
 
 final class SearchListViewController: UITableViewController {
     @IBOutlet private weak var searchBar: UISearchBar!
@@ -60,6 +61,19 @@ final class SearchListViewController: UITableViewController {
         viewModel.outputs.transitionToRepoItemDetail
             .bind(to: transitionToRepoItemDetail)
             .disposed(by: disposeBag)
+
+        viewModel.outputs.isLoadingHudAvailable
+            .map { [weak self] in
+                guard let strongSelf = self else { return }
+                strongSelf.setupLoadingHud(visible: $0)
+            }
+            .subscribe()
+            .disposed(by: disposeBag)
+    }
+
+    private func setupLoadingHud(visible: Bool) {
+        PKHUD.sharedHUD.contentView = PKHUDSystemActivityIndicatorView()
+        visible ? PKHUD.sharedHUD.show(onView: view) : PKHUD.sharedHUD.hide()
     }
 }
 

@@ -8,6 +8,7 @@
 
 import RxSwift
 import RxCocoa
+import PKHUD
 
 protocol SearchListViewModelInputs {
     var searchBarText: PublishRelay<String> { get }
@@ -18,6 +19,7 @@ protocol SearchListViewModelInputs {
 protocol SearchListViewModelOutputs {
     var repoItems: Observable<[RepoItem]> { get }
     var transitionToRepoItemDetail: PublishRelay<RepoItem> { get }
+    var isLoadingHudAvailable: PublishRelay<Bool> { get }
 }
 
 protocol SearchListViewModelType {
@@ -39,11 +41,14 @@ final class SearchListViewModel: SearchListViewModelInputs, SearchListViewModelO
     }
     private let repoItemsSubject = BehaviorRelay<[RepoItem]>(value: [])
     var transitionToRepoItemDetail = PublishRelay<RepoItem>()
+    var isLoadingHudAvailable = PublishRelay<Bool>()
 
     init() {
         searchButtonClicked
             .withLatestFrom(searchBarText)
-            .flatMapLatest { text -> Observable<Event<GitHubResponse>> in
+            .flatMapLatest { [weak self] text -> Observable<Event<GitHubResponse>> in
+                guard let strongSelf = self else { return .empty() }
+                strongSelf.isLoadingHudAvailable.accept(true)
                 return try GitHubAPI.searchRepository(keyValue: ["q": text])
                     .materialize()
             }
@@ -54,11 +59,12 @@ final class SearchListViewModel: SearchListViewModelInputs, SearchListViewModelO
                 case .next(let response):
                     print("DEBUG: search response count:: \(response.items.count)")
                     print("DEBUG: search response items:: \(response.items)")
+                    strongSelf.isLoadingHudAvailable.accept(false)
                     strongSelf.repoItemsSubject.accept(response.items)
 
                 case .error(let error):
                     print("searchButtonClicked error: \(error)")
-
+                    strongSelf.isLoadingHudAvailable.accept(false)
                 case .completed:
                     break
                 }
