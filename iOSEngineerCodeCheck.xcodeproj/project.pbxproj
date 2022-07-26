@@ -14,6 +14,12 @@
 		99F3AF67288C32E2009927E8 /* GitHubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F3AF66288C32E2009927E8 /* GitHubAPI.swift */; };
 		99F3AF69288C3310009927E8 /* GitHubTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F3AF68288C3310009927E8 /* GitHubTarget.swift */; };
 		99F3AF6C288D5280009927E8 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 99F3AF6B288D5280009927E8 /* Kingfisher */; };
+		99F3AF72288E3529009927E8 /* SearchListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F3AF71288E3529009927E8 /* SearchListViewModel.swift */; };
+		99F3AF75288EB52E009927E8 /* APIResponseStatusCodeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F3AF74288EB52E009927E8 /* APIResponseStatusCodeHandler.swift */; };
+		99F3AF7B288EBFB2009927E8 /* SearchListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F3AF79288EBFB1009927E8 /* SearchListCell.swift */; };
+		99F3AF7C288EBFB2009927E8 /* SearchListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99F3AF7A288EBFB2009927E8 /* SearchListCell.xib */; };
+		99F3AF7E288ED6FC009927E8 /* DetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99F3AF7D288ED6FC009927E8 /* DetailViewController.storyboard */; };
+		99F3AF8228901276009927E8 /* SearchListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99F3AF8128901276009927E8 /* SearchListViewController.storyboard */; };
 		BF0A658D244F2A3B00280FA6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A658C244F2A3B00280FA6 /* DetailViewController.swift */; };
 		BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945DE244DC5E80012785A /* AppDelegate.swift */; };
 		BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945E0244DC5E80012785A /* SceneDelegate.swift */; };
@@ -51,6 +57,12 @@
 		99F3AF5E288BB538009927E8 /* GitHubResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubResponse.swift; sourceTree = "<group>"; };
 		99F3AF66288C32E2009927E8 /* GitHubAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPI.swift; sourceTree = "<group>"; };
 		99F3AF68288C3310009927E8 /* GitHubTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubTarget.swift; sourceTree = "<group>"; };
+		99F3AF71288E3529009927E8 /* SearchListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListViewModel.swift; sourceTree = "<group>"; };
+		99F3AF74288EB52E009927E8 /* APIResponseStatusCodeHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponseStatusCodeHandler.swift; sourceTree = "<group>"; };
+		99F3AF79288EBFB1009927E8 /* SearchListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListCell.swift; sourceTree = "<group>"; };
+		99F3AF7A288EBFB2009927E8 /* SearchListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchListCell.xib; sourceTree = "<group>"; };
+		99F3AF7D288ED6FC009927E8 /* DetailViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DetailViewController.storyboard; sourceTree = "<group>"; };
+		99F3AF8128901276009927E8 /* SearchListViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SearchListViewController.storyboard; sourceTree = "<group>"; };
 		AF22DBE10D50A590A79DB835 /* Pods-iOSEngineerCodeCheckTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSEngineerCodeCheckTests.debug.xcconfig"; path = "Target Support Files/Pods-iOSEngineerCodeCheckTests/Pods-iOSEngineerCodeCheckTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BD0EE8EC94DF4813A143087E /* Pods-iOSEngineerCodeCheck.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSEngineerCodeCheck.release.xcconfig"; path = "Target Support Files/Pods-iOSEngineerCodeCheck/Pods-iOSEngineerCodeCheck.release.xcconfig"; sourceTree = "<group>"; };
 		BF0A658C244F2A3B00280FA6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +144,7 @@
 			children = (
 				99F3AF5E288BB538009927E8 /* GitHubResponse.swift */,
 				99F3AF65288C32D0009927E8 /* Moya */,
+				99F3AF73288EB457009927E8 /* Error */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -139,7 +152,10 @@
 		99F3AF6F288D9A05009927E8 /* SearchList */ = {
 			isa = PBXGroup;
 			children = (
+				99F3AF8128901276009927E8 /* SearchListViewController.storyboard */,
 				BFD945E2244DC5E80012785A /* SearchListViewController.swift */,
+				99F3AF71288E3529009927E8 /* SearchListViewModel.swift */,
+				99F3AF78288EBF71009927E8 /* Cell */,
 			);
 			path = SearchList;
 			sourceTree = "<group>";
@@ -147,9 +163,27 @@
 		99F3AF70288D9A39009927E8 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				99F3AF7D288ED6FC009927E8 /* DetailViewController.storyboard */,
 				BF0A658C244F2A3B00280FA6 /* DetailViewController.swift */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		99F3AF73288EB457009927E8 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				99F3AF74288EB52E009927E8 /* APIResponseStatusCodeHandler.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		99F3AF78288EBF71009927E8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				99F3AF79288EBFB1009927E8 /* SearchListCell.swift */,
+				99F3AF7A288EBFB2009927E8 /* SearchListCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		BFD945D2244DC5E80012785A = {
@@ -334,8 +368,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFD945EB244DC5EB0012785A /* LaunchScreen.storyboard in Resources */,
+				99F3AF7C288EBFB2009927E8 /* SearchListCell.xib in Resources */,
+				99F3AF7E288ED6FC009927E8 /* DetailViewController.storyboard in Resources */,
 				BFD945E8244DC5EB0012785A /* Assets.xcassets in Resources */,
 				BFD945E6244DC5E80012785A /* Main.storyboard in Resources */,
+				99F3AF8228901276009927E8 /* SearchListViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,7 +502,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFD945E3244DC5E80012785A /* SearchListViewController.swift in Sources */,
+				99F3AF7B288EBFB2009927E8 /* SearchListCell.swift in Sources */,
 				99F3AF5F288BB538009927E8 /* GitHubResponse.swift in Sources */,
+				99F3AF75288EB52E009927E8 /* APIResponseStatusCodeHandler.swift in Sources */,
+				99F3AF72288E3529009927E8 /* SearchListViewModel.swift in Sources */,
 				BF0A658D244F2A3B00280FA6 /* DetailViewController.swift in Sources */,
 				BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */,
 				99F3AF67288C32E2009927E8 /* GitHubAPI.swift in Sources */,
