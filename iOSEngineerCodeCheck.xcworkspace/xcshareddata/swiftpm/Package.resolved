@@ -8,6 +8,15 @@
         "revision" : "2235a22ca249199cb736237f4bb9cc12b6ed416a",
         "version" : "7.3.0"
       }
+    },
+    {
+      "identity" : "pkhud",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pkluz/PKHUD.git",
+      "state" : {
+        "revision" : "8fd26f23057c6bebd6695524b1c3e05e93aba571",
+        "version" : "5.4.0"
+      }
     }
   ],
   "version" : 2
