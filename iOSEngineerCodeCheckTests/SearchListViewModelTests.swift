@@ -6,6 +6,7 @@
 //  Copyright © 2022 YUMEMI Inc. All rights reserved.
 //
 
+@testable import iOSEngineerCodeCheck
 import XCTest
 
 class SearchListViewModelTests: XCTestCase {
