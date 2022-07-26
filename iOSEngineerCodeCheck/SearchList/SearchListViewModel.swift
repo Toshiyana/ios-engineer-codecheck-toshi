@@ -53,10 +53,11 @@ final class SearchListViewModel: SearchListViewModelInputs, SearchListViewModelO
                 switch event {
                 case .next(let response):
                     print("DEBUG: search response count:: \(response.items.count)")
+                    print("DEBUG: search response items:: \(response.items)")
                     strongSelf.repoItemsSubject.accept(response.items)
 
                 case .error(let error):
-                    print("searchButtonClicked error: \(error.localizedDescription)")
+                    print("searchButtonClicked error: \(error)")
 
                 case .completed:
                     break
