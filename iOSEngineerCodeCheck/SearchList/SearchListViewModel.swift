@@ -59,9 +59,8 @@ final class SearchListViewModel: SearchListViewModelInputs, SearchListViewModelO
                 return try githubAPI.searchRepository(keyValue: ["q": text])
                     .materialize()
             }
-            .subscribe { [weak self] event in
-                guard let strongSelf = self,
-                      let event = event.element else { return }
+            .subscribe(onNext: { [weak self] event in
+                guard let strongSelf = self else { return }
                 switch event {
                 case .next(let response):
                     print("DEBUG: search response count:: \(response.items.count)")
@@ -76,7 +75,7 @@ final class SearchListViewModel: SearchListViewModelInputs, SearchListViewModelO
                 case .completed:
                     break
                 }
-            }
+            })
             .disposed(by: disposeBag)
 
         itemSelected
