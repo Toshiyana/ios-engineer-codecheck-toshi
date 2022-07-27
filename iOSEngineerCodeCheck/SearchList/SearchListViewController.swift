@@ -14,7 +14,7 @@ import PKHUD
 final class SearchListViewController: UITableViewController {
     @IBOutlet private weak var searchBar: UISearchBar!
 
-    private let viewModel = SearchListViewModel()
+    private let viewModel = SearchListViewModel(githubAPI: GitHubAPI())
     private let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
