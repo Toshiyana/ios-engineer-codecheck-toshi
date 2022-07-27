@@ -19,7 +19,7 @@ protocol SearchListViewModelInputs {
 protocol SearchListViewModelOutputs {
     var repoItems: Observable<[RepoItem]> { get }
     var transitionToRepoItemDetail: PublishRelay<RepoItem> { get }
-    var isLoadingHudAvailable: PublishRelay<Bool> { get }
+    var isLoadingHudAvailable: Observable<Bool> { get }
     var errorResult: Observable<Error> { get }
 }
 
@@ -39,10 +39,11 @@ final class SearchListViewModel: SearchListViewModelInputs, SearchListViewModelO
     // MARK: - SearchListViewModelOutputs
     var repoItems: Observable<[RepoItem]> { return repoItemsRelay.asObservable() }
     var transitionToRepoItemDetail = PublishRelay<RepoItem>()
-    var isLoadingHudAvailable = PublishRelay<Bool>()
+    var isLoadingHudAvailable: Observable<Bool> { return isLoadingHudAvailableRelay.asObservable() }
     var errorResult: Observable<Error> { return errorResultRelay.asObservable() }
 
     private let repoItemsRelay = BehaviorRelay<[RepoItem]>(value: [])
+    private let isLoadingHudAvailableRelay = PublishRelay<Bool>()
     private let errorResultRelay = PublishRelay<Error>()
 
     private let githubAPI: GitHubAPIProtocol
@@ -54,7 +55,7 @@ final class SearchListViewModel: SearchListViewModelInputs, SearchListViewModelO
             .withLatestFrom(searchBarText)
             .flatMapLatest { [weak self] text -> Observable<Event<GitHubResponse>> in
                 guard let strongSelf = self else { return .empty() }
-                strongSelf.isLoadingHudAvailable.accept(true)
+                strongSelf.isLoadingHudAvailableRelay.accept(true)
                 return try githubAPI.searchRepository(keyValue: ["q": text])
                     .materialize()
             }
@@ -65,12 +66,12 @@ final class SearchListViewModel: SearchListViewModelInputs, SearchListViewModelO
                 case .next(let response):
                     print("DEBUG: search response count:: \(response.items.count)")
                     print("DEBUG: search response items:: \(response.items)")
-                    strongSelf.isLoadingHudAvailable.accept(false)
+                    strongSelf.isLoadingHudAvailableRelay.accept(false)
                     strongSelf.repoItemsRelay.accept(response.items)
 
                 case .error(let error):
                     print("searchButtonClicked error: \(error)")
-                    strongSelf.isLoadingHudAvailable.accept(false)
+                    strongSelf.isLoadingHudAvailableRelay.accept(false)
                     strongSelf.errorResultRelay.accept(error)
                 case .completed:
                     break
