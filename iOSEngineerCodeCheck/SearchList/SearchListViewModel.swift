@@ -43,13 +43,17 @@ final class SearchListViewModel: SearchListViewModelInputs, SearchListViewModelO
     var transitionToRepoItemDetail = PublishRelay<RepoItem>()
     var isLoadingHudAvailable = PublishRelay<Bool>()
 
-    init() {
+    private let githubAPI: GitHubAPIProtocol
+
+    init(githubAPI: GitHubAPIProtocol) {
+        self.githubAPI = githubAPI
+
         searchButtonClicked
             .withLatestFrom(searchBarText)
             .flatMapLatest { [weak self] text -> Observable<Event<GitHubResponse>> in
                 guard let strongSelf = self else { return .empty() }
                 strongSelf.isLoadingHudAvailable.accept(true)
-                return try GitHubAPI.searchRepository(keyValue: ["q": text])
+                return try githubAPI.searchRepository(keyValue: ["q": text])
                     .materialize()
             }
             .subscribe { [weak self] event in
