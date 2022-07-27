@@ -20,6 +20,7 @@ protocol SearchListViewModelOutputs {
     var repoItems: Observable<[RepoItem]> { get }
     var transitionToRepoItemDetail: PublishRelay<RepoItem> { get }
     var isLoadingHudAvailable: PublishRelay<Bool> { get }
+    var errorResult: Observable<Error> { get }
 }
 
 protocol SearchListViewModelType {
@@ -36,12 +37,13 @@ final class SearchListViewModel: SearchListViewModelInputs, SearchListViewModelO
     var itemSelected = PublishRelay<IndexPath>()
 
     // MARK: - SearchListViewModelOutputs
-    var repoItems: Observable<[RepoItem]> {
-        return repoItemsSubject.asObservable()
-    }
-    private let repoItemsSubject = BehaviorRelay<[RepoItem]>(value: [])
+    var repoItems: Observable<[RepoItem]> { return repoItemsRelay.asObservable() }
     var transitionToRepoItemDetail = PublishRelay<RepoItem>()
     var isLoadingHudAvailable = PublishRelay<Bool>()
+    var errorResult: Observable<Error> { return errorResultRelay.asObservable() }
+
+    private let repoItemsRelay = BehaviorRelay<[RepoItem]>(value: [])
+    private let errorResultRelay = PublishRelay<Error>()
 
     private let githubAPI: GitHubAPIProtocol
 
@@ -64,11 +66,12 @@ final class SearchListViewModel: SearchListViewModelInputs, SearchListViewModelO
                     print("DEBUG: search response count:: \(response.items.count)")
                     print("DEBUG: search response items:: \(response.items)")
                     strongSelf.isLoadingHudAvailable.accept(false)
-                    strongSelf.repoItemsSubject.accept(response.items)
+                    strongSelf.repoItemsRelay.accept(response.items)
 
                 case .error(let error):
                     print("searchButtonClicked error: \(error)")
                     strongSelf.isLoadingHudAvailable.accept(false)
+                    strongSelf.errorResultRelay.accept(error)
                 case .completed:
                     break
                 }
@@ -78,7 +81,7 @@ final class SearchListViewModel: SearchListViewModelInputs, SearchListViewModelO
         itemSelected
             .subscribe { [weak self] event in
                 guard let strongSelf = self, let indexPath = event.element else { return }
-                let repoItem = strongSelf.repoItemsSubject.value[indexPath.row]
+                let repoItem = strongSelf.repoItemsRelay.value[indexPath.row]
                 strongSelf.transitionToRepoItemDetail.accept(repoItem)
             }
             .disposed(by: disposeBag)
