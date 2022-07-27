@@ -70,11 +70,11 @@ final class SearchListViewController: UIViewController {
 
         viewModel.outputs.errorResult
             .observe(on: MainScheduler.instance)
-            .subscribe { [weak self] _ in
+            .subscribe(onNext: { [weak self] _ in
                 guard let strongSelf = self else { return }
                 // TODO: エラー内容に応じたメッセージを表示したい
                 strongSelf.showAlertView(title: "エラー", message: "通信エラーが発生しました")
-            }
+            })
             .disposed(by: disposeBag)
     }
 
