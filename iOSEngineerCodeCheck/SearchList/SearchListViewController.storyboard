@@ -1,33 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MOh-CZ-3ki">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cmg-Ve-XRs">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
-        <scene sceneID="0Yw-Vc-k2Q">
+        <!--Search List View Controller-->
+        <scene sceneID="b10-gi-9Tg">
             <objects>
-                <tableViewController id="MOh-CZ-3ki" customClass="SearchListViewController" customModule="iOSEngineerCodeCheck" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Fpt-Ev-QNW">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                <viewController id="cmg-Ve-XRs" customClass="SearchListViewController" customModule="iOSEngineerCodeCheck" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hcn-Aj-D7U">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="uj0-N7-Qx8">
+                                <rect key="frame" x="0.0" y="44" width="414" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="BX8-r4-kIn">
+                                <rect key="frame" x="0.0" y="95" width="414" height="767"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mCU-Nl-2D3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="6rq-CD-Hob">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </searchBar>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="ktq-eC-ZBq"/>
+                        <constraints>
+                            <constraint firstItem="BX8-r4-kIn" firstAttribute="leading" secondItem="mCU-Nl-2D3" secondAttribute="leading" id="EFm-w7-qmA"/>
+                            <constraint firstItem="uj0-N7-Qx8" firstAttribute="trailing" secondItem="mCU-Nl-2D3" secondAttribute="trailing" id="ElK-rm-fJc"/>
+                            <constraint firstItem="uj0-N7-Qx8" firstAttribute="top" secondItem="mCU-Nl-2D3" secondAttribute="top" id="IWZ-5M-H0C"/>
+                            <constraint firstItem="BX8-r4-kIn" firstAttribute="trailing" secondItem="mCU-Nl-2D3" secondAttribute="trailing" id="IbF-xc-xdm"/>
+                            <constraint firstItem="BX8-r4-kIn" firstAttribute="bottom" secondItem="mCU-Nl-2D3" secondAttribute="bottom" id="Myv-MJ-ht9"/>
+                            <constraint firstItem="uj0-N7-Qx8" firstAttribute="leading" secondItem="mCU-Nl-2D3" secondAttribute="leading" id="ghJ-44-UoA"/>
+                            <constraint firstItem="BX8-r4-kIn" firstAttribute="top" secondItem="uj0-N7-Qx8" secondAttribute="bottom" id="ivY-6e-sFQ"/>
+                        </constraints>
+                    </view>
                     <connections>
-                        <outlet property="searchBar" destination="6rq-CD-Hob" id="3gq-mK-4M3"/>
+                        <outlet property="searchBar" destination="uj0-N7-Qx8" id="ANf-vp-JLG"/>
+                        <outlet property="tableView" destination="BX8-r4-kIn" id="Tcl-vJ-JP2"/>
                     </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xer-fe-JeW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bQh-wl-OJd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-498" y="137"/>
+            <point key="canvasLocation" x="507.24637681159425" y="136.60714285714286"/>
         </scene>
     </scenes>
     <resources>
