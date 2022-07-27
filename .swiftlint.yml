@@ -41,7 +41,6 @@ opt_in_rules:
 - private_action
 - prohibited_super_call
 - redundant_nil_coalescing
-- trailing_closure
 - unused_import
 - vertical_parameter_alignment_on_call
 - vertical_whitespace_closing_braces
