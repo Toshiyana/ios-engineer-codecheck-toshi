@@ -11,7 +11,8 @@ import RxSwift
 import RxCocoa
 import PKHUD
 
-final class SearchListViewController: UITableViewController {
+final class SearchListViewController: UIViewController {
+    @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var searchBar: UISearchBar!
 
     private let viewModel = SearchListViewModel(githubAPI: GitHubAPI())
@@ -19,9 +20,6 @@ final class SearchListViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        tableView.dataSource = nil
-        tableView.delegate = nil
 
         setupUI()
         setupViewModel()
