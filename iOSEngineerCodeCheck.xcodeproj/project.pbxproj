@@ -38,6 +38,13 @@
 		99F999B9289313DC00D1E6FC /* RepoInformationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99F999B7289313DC00D1E6FC /* RepoInformationCell.xib */; };
 		99F999BC2893241F00D1E6FC /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 99F999BB2893241F00D1E6FC /* Realm */; };
 		99F999BE2893241F00D1E6FC /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 99F999BD2893241F00D1E6FC /* RealmSwift */; };
+		99F999C12893251100D1E6FC /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F999C02893251100D1E6FC /* RealmManager.swift */; };
+		99F999C32893257200D1E6FC /* RepoItemObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F999C22893257200D1E6FC /* RepoItemObject.swift */; };
+		99F999C528932C5E00D1E6FC /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F999C428932C5E00D1E6FC /* DetailViewModel.swift */; };
+		99F999C72893374700D1E6FC /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F999C62893374700D1E6FC /* FavoriteViewModel.swift */; };
+		99F999CA28933E7100D1E6FC /* FavoriteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F999C928933E7100D1E6FC /* FavoriteDetailViewController.swift */; };
+		99F999CC28933E9200D1E6FC /* FavoriteDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F999CB28933E9200D1E6FC /* FavoriteDetailViewModel.swift */; };
+		99F999CE28933EB300D1E6FC /* FavoriteDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99F999CD28933EB300D1E6FC /* FavoriteDetailViewController.storyboard */; };
 		BF0A658D244F2A3B00280FA6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A658C244F2A3B00280FA6 /* DetailViewController.swift */; };
 		BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945DE244DC5E80012785A /* AppDelegate.swift */; };
 		BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945E0244DC5E80012785A /* SceneDelegate.swift */; };
@@ -96,6 +103,13 @@
 		99F999B32892FF1B00D1E6FC /* TabBarUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarUtility.swift; sourceTree = "<group>"; };
 		99F999B6289313DB00D1E6FC /* RepoInformationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoInformationCell.swift; sourceTree = "<group>"; };
 		99F999B7289313DC00D1E6FC /* RepoInformationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoInformationCell.xib; sourceTree = "<group>"; };
+		99F999C02893251100D1E6FC /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		99F999C22893257200D1E6FC /* RepoItemObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoItemObject.swift; sourceTree = "<group>"; };
+		99F999C428932C5E00D1E6FC /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		99F999C62893374700D1E6FC /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
+		99F999C928933E7100D1E6FC /* FavoriteDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDetailViewController.swift; sourceTree = "<group>"; };
+		99F999CB28933E9200D1E6FC /* FavoriteDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDetailViewModel.swift; sourceTree = "<group>"; };
+		99F999CD28933EB300D1E6FC /* FavoriteDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FavoriteDetailViewController.storyboard; sourceTree = "<group>"; };
 		AF22DBE10D50A590A79DB835 /* Pods-iOSEngineerCodeCheckTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSEngineerCodeCheckTests.debug.xcconfig"; path = "Target Support Files/Pods-iOSEngineerCodeCheckTests/Pods-iOSEngineerCodeCheckTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BD0EE8EC94DF4813A143087E /* Pods-iOSEngineerCodeCheck.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSEngineerCodeCheck.release.xcconfig"; path = "Target Support Files/Pods-iOSEngineerCodeCheck/Pods-iOSEngineerCodeCheck.release.xcconfig"; sourceTree = "<group>"; };
 		BF0A658C244F2A3B00280FA6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -196,14 +210,15 @@
 			path = SearchList;
 			sourceTree = "<group>";
 		};
-		99F3AF70288D9A39009927E8 /* Detail */ = {
+		99F3AF70288D9A39009927E8 /* SearchDetail */ = {
 			isa = PBXGroup;
 			children = (
 				99F999B52893139B00D1E6FC /* Cell */,
 				99F3AF7D288ED6FC009927E8 /* DetailViewController.storyboard */,
 				BF0A658C244F2A3B00280FA6 /* DetailViewController.swift */,
+				99F999C428932C5E00D1E6FC /* DetailViewModel.swift */,
 			);
-			path = Detail;
+			path = SearchDetail;
 			sourceTree = "<group>";
 		};
 		99F3AF73288EB457009927E8 /* Error */ = {
@@ -259,13 +274,14 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
-		99F999AA2892ED6300D1E6FC /* Favorite */ = {
+		99F999AA2892ED6300D1E6FC /* FavoriteList */ = {
 			isa = PBXGroup;
 			children = (
 				99F999AF2892EF9600D1E6FC /* FavoriteViewController.storyboard */,
 				99F999AB2892EE0200D1E6FC /* FavoriteViewController.swift */,
+				99F999C62893374700D1E6FC /* FavoriteViewModel.swift */,
 			);
-			path = Favorite;
+			path = FavoriteList;
 			sourceTree = "<group>";
 		};
 		99F999B52893139B00D1E6FC /* Cell */ = {
@@ -280,8 +296,20 @@
 		99F999BF2893244300D1E6FC /* Realm */ = {
 			isa = PBXGroup;
 			children = (
+				99F999C02893251100D1E6FC /* RealmManager.swift */,
+				99F999C22893257200D1E6FC /* RepoItemObject.swift */,
 			);
 			path = Realm;
+			sourceTree = "<group>";
+		};
+		99F999C828933C1800D1E6FC /* FavoriteDetail */ = {
+			isa = PBXGroup;
+			children = (
+				99F999C928933E7100D1E6FC /* FavoriteDetailViewController.swift */,
+				99F999CB28933E9200D1E6FC /* FavoriteDetailViewModel.swift */,
+				99F999CD28933EB300D1E6FC /* FavoriteDetailViewController.storyboard */,
+			);
+			path = FavoriteDetail;
 			sourceTree = "<group>";
 		};
 		BFD945D2244DC5E80012785A = {
@@ -309,9 +337,10 @@
 		BFD945DD244DC5E80012785A /* iOSEngineerCodeCheck */ = {
 			isa = PBXGroup;
 			children = (
-				99F999AA2892ED6300D1E6FC /* Favorite */,
+				99F999AA2892ED6300D1E6FC /* FavoriteList */,
+				99F999C828933C1800D1E6FC /* FavoriteDetail */,
 				99F3AF6F288D9A05009927E8 /* SearchList */,
-				99F3AF70288D9A39009927E8 /* Detail */,
+				99F3AF70288D9A39009927E8 /* SearchDetail */,
 				99F3AF6D288D9986009927E8 /* Model */,
 				99F3AF8F28918ED0009927E8 /* Utility */,
 				BFD945DE244DC5E80012785A /* AppDelegate.swift */,
@@ -480,6 +509,7 @@
 				99F3AF7E288ED6FC009927E8 /* DetailViewController.storyboard in Resources */,
 				99F999A92892DA5900D1E6FC /* LoadingGif.gif in Resources */,
 				99F999B9289313DC00D1E6FC /* RepoInformationCell.xib in Resources */,
+				99F999CE28933EB300D1E6FC /* FavoriteDetailViewController.storyboard in Resources */,
 				BFD945E8244DC5EB0012785A /* Assets.xcassets in Resources */,
 				BFD945E6244DC5E80012785A /* Main.storyboard in Resources */,
 				99F3AF8228901276009927E8 /* SearchListViewController.storyboard in Resources */,
@@ -616,10 +646,15 @@
 				99F999A22892B9BB00D1E6FC /* QueryShareManager.swift in Sources */,
 				99F999B8289313DC00D1E6FC /* RepoInformationCell.swift in Sources */,
 				99F3AF9128919283009927E8 /* UIViewController+Extension.swift in Sources */,
+				99F999C528932C5E00D1E6FC /* DetailViewModel.swift in Sources */,
 				BFD945E3244DC5E80012785A /* SearchListViewController.swift in Sources */,
 				99F3AF8C2891593D009927E8 /* GitHubAPIProtocol.swift in Sources */,
+				99F999C72893374700D1E6FC /* FavoriteViewModel.swift in Sources */,
+				99F999C32893257200D1E6FC /* RepoItemObject.swift in Sources */,
+				99F999C12893251100D1E6FC /* RealmManager.swift in Sources */,
 				99F3AF7B288EBFB2009927E8 /* SearchListCell.swift in Sources */,
 				99F3AF5F288BB538009927E8 /* GitHubResponse.swift in Sources */,
+				99F999CC28933E9200D1E6FC /* FavoriteDetailViewModel.swift in Sources */,
 				99F3AF75288EB52E009927E8 /* APIResponseStatusCodeHandler.swift in Sources */,
 				99F3AF72288E3529009927E8 /* SearchListViewModel.swift in Sources */,
 				99F999B22892FEB900D1E6FC /* ColorUtility.swift in Sources */,
@@ -628,6 +663,7 @@
 				99F999AC2892EE0200D1E6FC /* FavoriteViewController.swift in Sources */,
 				99F3AF67288C32E2009927E8 /* GitHubAPI.swift in Sources */,
 				BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */,
+				99F999CA28933E7100D1E6FC /* FavoriteDetailViewController.swift in Sources */,
 				99F999B42892FF1B00D1E6FC /* TabBarUtility.swift in Sources */,
 				99F3AF69288C3310009927E8 /* GitHubTarget.swift in Sources */,
 			);
