@@ -15,6 +15,18 @@ final class SearchListViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var searchBar: UISearchBar!
 
+    private lazy var viewSpinner: UIView = {
+        let view = UIView(frame: CGRect(x: 0,
+                                        y: 0,
+                                        width: view.frame.size.width,
+                                        height: 100))
+        let spinner = UIActivityIndicatorView()
+        spinner.center = view.center
+        view.addSubview(spinner)
+        spinner.startAnimating()
+        return view
+    }()
+
     private let viewModel = SearchListViewModel(githubAPI: GitHubAPI())
     private let disposeBag = DisposeBag()
 
@@ -68,6 +80,13 @@ final class SearchListViewController: UIViewController {
             .subscribe()
             .disposed(by: disposeBag)
 
+        viewModel.outputs.isLoadingSpinnerAvailable
+            .subscribe(onNext: { [weak self] isAvailable in
+                guard let strongSelf = self else { return }
+                strongSelf.tableView.tableFooterView = isAvailable ? strongSelf.viewSpinner : UIView(frame: .zero)
+            })
+            .disposed(by: disposeBag)
+
         viewModel.outputs.errorResult
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] _ in
@@ -79,6 +98,18 @@ final class SearchListViewController: UIViewController {
 
         viewModel.outputs.deselectRow
             .bind(to: deselectRow)
+            .disposed(by: disposeBag)
+
+        tableView.rx.didScroll
+            .subscribe { [weak self] _ in
+                guard let strongSelf = self else { return }
+                let offsetY = strongSelf.tableView.contentOffset.y
+                let contentHeight = strongSelf.tableView.contentSize.height
+
+                if offsetY > (contentHeight - strongSelf.tableView.frame.size.height - 100) {
+                    strongSelf.viewModel.outputs.fetchMoreData.accept(())
+                }
+            }
             .disposed(by: disposeBag)
     }
 
