@@ -20,6 +20,7 @@ final class DetailViewController: UIViewController {
 
     @IBOutlet private weak var tableViewHeightConstant: NSLayoutConstraint! // ScrollView内におけるTableViewのHeightを自動調整するための変数
 
+    private let viewModel = DetailViewModel()
     private let disposeBag = DisposeBag()
 
     var repoItem: RepoItem?
@@ -38,6 +39,7 @@ final class DetailViewController: UIViewController {
 
         setupUI()
         setupRx()
+        setupViewModel()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -81,6 +83,53 @@ final class DetailViewController: UIViewController {
                 strongSelf.presentSafariViewController(for: url)
             })
             .disposed(by: disposeBag)
+    }
+
+    private func setupViewModel() {
+        favoriteButton.rx.tap
+            .subscribe { [weak self] _ in
+                guard let strongSelf = self,
+                      let repoItem = strongSelf.repoItem else { return }
+
+                if strongSelf.favoriteButton.tag == 0 {
+                    strongSelf.viewModel.inputs.addFavorite.accept(repoItem)
+                } else {
+                    strongSelf.viewModel.removeFavorite.accept("\(repoItem.id)")
+                }
+                strongSelf.activeButton(button: strongSelf.favoriteButton)
+            }
+            .disposed(by: disposeBag)
+
+        viewModel.activeFavorite
+            .subscribe { [weak self] _ in
+                guard let strongSelf = self else { return }
+                strongSelf.activeButton(button: strongSelf.favoriteButton)
+            }
+            .disposed(by: disposeBag)
+
+        if let repoItem = repoItem {
+            viewModel.getFavoriteCondition.accept("\(repoItem.id)")
+        }
+    }
+
+    private func activeButton(button: UIButton) {
+        if button.tag == 0 {
+            button.tag = 1
+            button.tintColor = .systemRed
+            button.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+
+            //            button.backgroundColor = .systemOrange
+            //            button.setTitle("お気に入りから削除", for: .normal)
+            //            button.setTitleColor(.white, for: .normal)
+        } else {
+            button.tag = 0
+            button.tintColor = .darkGray
+            button.setImage(UIImage(systemName: "heart"), for: .normal)
+
+            //            button.backgroundColor = .systemGray5
+            //            button.setTitle("お気に入りに追加", for: .normal)
+            //            button.setTitleColor(.black, for: .normal)
+        }
     }
 }
 
