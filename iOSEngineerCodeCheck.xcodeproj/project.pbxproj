@@ -30,6 +30,8 @@
 		99F999A22892B9BB00D1E6FC /* QueryShareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F999A12892B9BB00D1E6FC /* QueryShareManager.swift */; };
 		99F999A52892D99900D1E6FC /* Gifu in Frameworks */ = {isa = PBXBuildFile; productRef = 99F999A42892D99900D1E6FC /* Gifu */; };
 		99F999A92892DA5900D1E6FC /* LoadingGif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 99F999A82892DA5900D1E6FC /* LoadingGif.gif */; };
+		99F999AC2892EE0200D1E6FC /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F999AB2892EE0200D1E6FC /* FavoriteViewController.swift */; };
+		99F999B02892EF9600D1E6FC /* FavoriteViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99F999AF2892EF9600D1E6FC /* FavoriteViewController.storyboard */; };
 		BF0A658D244F2A3B00280FA6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A658C244F2A3B00280FA6 /* DetailViewController.swift */; };
 		BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945DE244DC5E80012785A /* AppDelegate.swift */; };
 		BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945E0244DC5E80012785A /* SceneDelegate.swift */; };
@@ -82,6 +84,8 @@
 		99F9999928929C9F00D1E6FC /* iOSEngineerCodeCheckUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSEngineerCodeCheckUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		99F999A12892B9BB00D1E6FC /* QueryShareManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryShareManager.swift; sourceTree = "<group>"; };
 		99F999A82892DA5900D1E6FC /* LoadingGif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LoadingGif.gif; sourceTree = "<group>"; };
+		99F999AB2892EE0200D1E6FC /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		99F999AF2892EF9600D1E6FC /* FavoriteViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FavoriteViewController.storyboard; sourceTree = "<group>"; };
 		AF22DBE10D50A590A79DB835 /* Pods-iOSEngineerCodeCheckTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSEngineerCodeCheckTests.debug.xcconfig"; path = "Target Support Files/Pods-iOSEngineerCodeCheckTests/Pods-iOSEngineerCodeCheckTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BD0EE8EC94DF4813A143087E /* Pods-iOSEngineerCodeCheck.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSEngineerCodeCheck.release.xcconfig"; path = "Target Support Files/Pods-iOSEngineerCodeCheck/Pods-iOSEngineerCodeCheck.release.xcconfig"; sourceTree = "<group>"; };
 		BF0A658C244F2A3B00280FA6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -239,6 +243,15 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
+		99F999AA2892ED6300D1E6FC /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				99F999AF2892EF9600D1E6FC /* FavoriteViewController.storyboard */,
+				99F999AB2892EE0200D1E6FC /* FavoriteViewController.swift */,
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
 		BFD945D2244DC5E80012785A = {
 			isa = PBXGroup;
 			children = (
@@ -264,10 +277,11 @@
 		BFD945DD244DC5E80012785A /* iOSEngineerCodeCheck */ = {
 			isa = PBXGroup;
 			children = (
-				99F3AF8F28918ED0009927E8 /* Utility */,
+				99F999AA2892ED6300D1E6FC /* Favorite */,
 				99F3AF6F288D9A05009927E8 /* SearchList */,
 				99F3AF70288D9A39009927E8 /* Detail */,
 				99F3AF6D288D9986009927E8 /* Model */,
+				99F3AF8F28918ED0009927E8 /* Utility */,
 				BFD945DE244DC5E80012785A /* AppDelegate.swift */,
 				BFD945E0244DC5E80012785A /* SceneDelegate.swift */,
 				BFD945E4244DC5E80012785A /* Main.storyboard */,
@@ -426,6 +440,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFD945EB244DC5EB0012785A /* LaunchScreen.storyboard in Resources */,
+				99F999B02892EF9600D1E6FC /* FavoriteViewController.storyboard in Resources */,
 				99F3AF7C288EBFB2009927E8 /* SearchListCell.xib in Resources */,
 				99F3AF7E288ED6FC009927E8 /* DetailViewController.storyboard in Resources */,
 				99F999A92892DA5900D1E6FC /* LoadingGif.gif in Resources */,
@@ -572,6 +587,7 @@
 				99F3AF72288E3529009927E8 /* SearchListViewModel.swift in Sources */,
 				BF0A658D244F2A3B00280FA6 /* DetailViewController.swift in Sources */,
 				BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */,
+				99F999AC2892EE0200D1E6FC /* FavoriteViewController.swift in Sources */,
 				99F3AF67288C32E2009927E8 /* GitHubAPI.swift in Sources */,
 				BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */,
 				99F3AF69288C3310009927E8 /* GitHubTarget.swift in Sources */,
