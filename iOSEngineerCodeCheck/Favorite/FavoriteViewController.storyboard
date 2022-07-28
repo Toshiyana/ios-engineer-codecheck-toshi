@@ -31,6 +31,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="お気に入り" id="8Xb-iB-Xgy"/>
+                    <connections>
+                        <outlet property="tableView" destination="nF0-hf-4Dl" id="wRx-wd-7to"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zku-Ws-aBl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
