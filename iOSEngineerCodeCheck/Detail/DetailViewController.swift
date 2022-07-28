@@ -8,6 +8,8 @@
 
 import UIKit
 import Kingfisher
+import RxSwift
+import RxCocoa
 
 final class DetailViewController: UIViewController {
     @IBOutlet private weak var iconImageView: UIImageView!
@@ -17,6 +19,8 @@ final class DetailViewController: UIViewController {
     @IBOutlet private weak var accessPageButton: UIButton!
 
     @IBOutlet private weak var tableViewHeightConstant: NSLayoutConstraint! // ScrollView内におけるTableViewのHeightを自動調整するための変数
+
+    private let disposeBag = DisposeBag()
 
     var repoItem: RepoItem?
     private let infoName = ["Language", "Stars Count", "Watchers Count", "Forks Count",
@@ -33,6 +37,7 @@ final class DetailViewController: UIViewController {
         }
 
         setupUI()
+        setupRx()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -66,6 +71,16 @@ final class DetailViewController: UIViewController {
         titleLabel.numberOfLines = 1
         titleLabel.minimumScaleFactor = 0.5
         titleLabel.adjustsFontSizeToFitWidth = true
+    }
+
+    private func setupRx() {
+        accessPageButton.rx.tap
+            .subscribe({ [weak self] _ in
+                guard let strongSelf = self,
+                      let url = strongSelf.repoItem?.htmlUrl else { return }
+                strongSelf.presentSafariViewController(for: url)
+            })
+            .disposed(by: disposeBag)
     }
 }
 
