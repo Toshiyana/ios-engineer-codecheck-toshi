@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		43751671143CDEA4717E32B3 /* Pods_iOSEngineerCodeCheckTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7614B48FAE0F05F620A35333 /* Pods_iOSEngineerCodeCheckTests.framework */; };
-		5A0F63E2B19E6DBAE00F7E78 /* Pods_iOSEngineerCodeCheckUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFEDC585273C836272A2F0F6 /* Pods_iOSEngineerCodeCheckUITests.framework */; };
 		5BEF55D819CBA82736D46B69 /* Pods_iOSEngineerCodeCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCB55484CA71AC11DBE84286 /* Pods_iOSEngineerCodeCheck.framework */; };
 		99F3AF5F288BB538009927E8 /* GitHubResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F3AF5E288BB538009927E8 /* GitHubResponse.swift */; };
 		99F3AF67288C32E2009927E8 /* GitHubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F3AF66288C32E2009927E8 /* GitHubAPI.swift */; };
@@ -26,6 +25,8 @@
 		99F3AF8C2891593D009927E8 /* GitHubAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F3AF8B2891593D009927E8 /* GitHubAPIProtocol.swift */; };
 		99F3AF8E28915E2C009927E8 /* MockGitHubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F3AF8D28915E2C009927E8 /* MockGitHubAPI.swift */; };
 		99F3AF9128919283009927E8 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F3AF9028919283009927E8 /* UIViewController+Extension.swift */; };
+		99F9999828929C9F00D1E6FC /* iOSEngineerCodeCheckUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F9999728929C9F00D1E6FC /* iOSEngineerCodeCheckUITests.swift */; };
+		99F9999A28929C9F00D1E6FC /* iOSEngineerCodeCheckUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F9999928929C9F00D1E6FC /* iOSEngineerCodeCheckUITestsLaunchTests.swift */; };
 		BF0A658D244F2A3B00280FA6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A658C244F2A3B00280FA6 /* DetailViewController.swift */; };
 		BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945DE244DC5E80012785A /* AppDelegate.swift */; };
 		BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945E0244DC5E80012785A /* SceneDelegate.swift */; };
@@ -33,18 +34,18 @@
 		BFD945E6244DC5E80012785A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFD945E4244DC5E80012785A /* Main.storyboard */; };
 		BFD945E8244DC5EB0012785A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFD945E7244DC5EB0012785A /* Assets.xcassets */; };
 		BFD945EB244DC5EB0012785A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFD945E9244DC5EB0012785A /* LaunchScreen.storyboard */; };
-		BFD94601244DC5EC0012785A /* iOSEngineerCodeCheckUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD94600244DC5EC0012785A /* iOSEngineerCodeCheckUITests.swift */; };
+		F676CD73F29AA384E22A7908 /* Pods_iOSEngineerCodeCheckUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFEDC585273C836272A2F0F6 /* Pods_iOSEngineerCodeCheckUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		BFD945F2244DC5EB0012785A /* PBXContainerItemProxy */ = {
+		99F9999B28929C9F00D1E6FC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFD945D3244DC5E80012785A /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = BFD945DA244DC5E80012785A;
 			remoteInfo = iOSEngineerCodeCheck;
 		};
-		BFD945FD244DC5EB0012785A /* PBXContainerItemProxy */ = {
+		BFD945F2244DC5EB0012785A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFD945D3244DC5E80012785A /* Project object */;
 			proxyType = 1;
@@ -73,6 +74,9 @@
 		99F3AF8B2891593D009927E8 /* GitHubAPIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPIProtocol.swift; sourceTree = "<group>"; };
 		99F3AF8D28915E2C009927E8 /* MockGitHubAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGitHubAPI.swift; sourceTree = "<group>"; };
 		99F3AF9028919283009927E8 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		99F9999528929C9F00D1E6FC /* iOSEngineerCodeCheckUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSEngineerCodeCheckUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		99F9999728929C9F00D1E6FC /* iOSEngineerCodeCheckUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSEngineerCodeCheckUITests.swift; sourceTree = "<group>"; };
+		99F9999928929C9F00D1E6FC /* iOSEngineerCodeCheckUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSEngineerCodeCheckUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		AF22DBE10D50A590A79DB835 /* Pods-iOSEngineerCodeCheckTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSEngineerCodeCheckTests.debug.xcconfig"; path = "Target Support Files/Pods-iOSEngineerCodeCheckTests/Pods-iOSEngineerCodeCheckTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BD0EE8EC94DF4813A143087E /* Pods-iOSEngineerCodeCheck.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSEngineerCodeCheck.release.xcconfig"; path = "Target Support Files/Pods-iOSEngineerCodeCheck/Pods-iOSEngineerCodeCheck.release.xcconfig"; sourceTree = "<group>"; };
 		BF0A658C244F2A3B00280FA6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -86,9 +90,6 @@
 		BFD945EC244DC5EB0012785A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFD945F1244DC5EB0012785A /* iOSEngineerCodeCheckTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSEngineerCodeCheckTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD945F7244DC5EB0012785A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BFD945FC244DC5EB0012785A /* iOSEngineerCodeCheckUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSEngineerCodeCheckUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BFD94600244DC5EC0012785A /* iOSEngineerCodeCheckUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSEngineerCodeCheckUITests.swift; sourceTree = "<group>"; };
-		BFD94602244DC5EC0012785A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFEDC585273C836272A2F0F6 /* Pods_iOSEngineerCodeCheckUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSEngineerCodeCheckUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C003B0DF9696DD1D8B1E41C7 /* Pods-iOSEngineerCodeCheckUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSEngineerCodeCheckUITests.debug.xcconfig"; path = "Target Support Files/Pods-iOSEngineerCodeCheckUITests/Pods-iOSEngineerCodeCheckUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D5385AE1272057280F11E0CB /* Pods-iOSEngineerCodeCheck-iOSEngineerCodeCheckUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSEngineerCodeCheck-iOSEngineerCodeCheckUITests.debug.xcconfig"; path = "Target Support Files/Pods-iOSEngineerCodeCheck-iOSEngineerCodeCheckUITests/Pods-iOSEngineerCodeCheck-iOSEngineerCodeCheckUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -96,6 +97,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		99F9999228929C9F00D1E6FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F676CD73F29AA384E22A7908 /* Pods_iOSEngineerCodeCheckUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BFD945D8244DC5E80012785A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -111,14 +120,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				43751671143CDEA4717E32B3 /* Pods_iOSEngineerCodeCheckTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BFD945F9244DC5EB0012785A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5A0F63E2B19E6DBAE00F7E78 /* Pods_iOSEngineerCodeCheckUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,12 +215,21 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		99F9999628929C9F00D1E6FC /* iOSEngineerCodeCheckUITests */ = {
+			isa = PBXGroup;
+			children = (
+				99F9999728929C9F00D1E6FC /* iOSEngineerCodeCheckUITests.swift */,
+				99F9999928929C9F00D1E6FC /* iOSEngineerCodeCheckUITestsLaunchTests.swift */,
+			);
+			path = iOSEngineerCodeCheckUITests;
+			sourceTree = "<group>";
+		};
 		BFD945D2244DC5E80012785A = {
 			isa = PBXGroup;
 			children = (
 				BFD945DD244DC5E80012785A /* iOSEngineerCodeCheck */,
 				BFD945F4244DC5EB0012785A /* iOSEngineerCodeCheckTests */,
-				BFD945FF244DC5EB0012785A /* iOSEngineerCodeCheckUITests */,
+				99F9999628929C9F00D1E6FC /* iOSEngineerCodeCheckUITests */,
 				BFD945DC244DC5E80012785A /* Products */,
 				81B421E4A8CB8A80D64CBFCB /* Pods */,
 				C16E21A1F604551952EE6F04 /* Frameworks */,
@@ -231,7 +241,7 @@
 			children = (
 				BFD945DB244DC5E80012785A /* iOSEngineerCodeCheck.app */,
 				BFD945F1244DC5EB0012785A /* iOSEngineerCodeCheckTests.xctest */,
-				BFD945FC244DC5EB0012785A /* iOSEngineerCodeCheckUITests.xctest */,
+				99F9999528929C9F00D1E6FC /* iOSEngineerCodeCheckUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -263,15 +273,6 @@
 			path = iOSEngineerCodeCheckTests;
 			sourceTree = "<group>";
 		};
-		BFD945FF244DC5EB0012785A /* iOSEngineerCodeCheckUITests */ = {
-			isa = PBXGroup;
-			children = (
-				BFD94600244DC5EC0012785A /* iOSEngineerCodeCheckUITests.swift */,
-				BFD94602244DC5EC0012785A /* Info.plist */,
-			);
-			path = iOSEngineerCodeCheckUITests;
-			sourceTree = "<group>";
-		};
 		C16E21A1F604551952EE6F04 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -285,6 +286,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		99F9999428929C9F00D1E6FC /* iOSEngineerCodeCheckUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 99F9999F28929C9F00D1E6FC /* Build configuration list for PBXNativeTarget "iOSEngineerCodeCheckUITests" */;
+			buildPhases = (
+				6D67F783F5A72FFE654F7631 /* [CP] Check Pods Manifest.lock */,
+				99F9999128929C9F00D1E6FC /* Sources */,
+				99F9999228929C9F00D1E6FC /* Frameworks */,
+				99F9999328929C9F00D1E6FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				99F9999C28929C9F00D1E6FC /* PBXTargetDependency */,
+			);
+			name = iOSEngineerCodeCheckUITests;
+			productName = iOSEngineerCodeCheckUITests;
+			productReference = 99F9999528929C9F00D1E6FC /* iOSEngineerCodeCheckUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		BFD945DA244DC5E80012785A /* iOSEngineerCodeCheck */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BFD94605244DC5EC0012785A /* Build configuration list for PBXNativeTarget "iOSEngineerCodeCheck" */;
@@ -328,43 +348,24 @@
 			productReference = BFD945F1244DC5EB0012785A /* iOSEngineerCodeCheckTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		BFD945FB244DC5EB0012785A /* iOSEngineerCodeCheckUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BFD9460B244DC5EC0012785A /* Build configuration list for PBXNativeTarget "iOSEngineerCodeCheckUITests" */;
-			buildPhases = (
-				8FF7B74E8D4F5978B25C4E15 /* [CP] Check Pods Manifest.lock */,
-				BFD945F8244DC5EB0012785A /* Sources */,
-				BFD945F9244DC5EB0012785A /* Frameworks */,
-				BFD945FA244DC5EB0012785A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				BFD945FE244DC5EB0012785A /* PBXTargetDependency */,
-			);
-			name = iOSEngineerCodeCheckUITests;
-			productName = iOSEngineerCodeCheckUITests;
-			productReference = BFD945FC244DC5EB0012785A /* iOSEngineerCodeCheckUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		BFD945D3244DC5E80012785A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1300;
+				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1300;
 				ORGANIZATIONNAME = "YUMEMI Inc.";
 				TargetAttributes = {
+					99F9999428929C9F00D1E6FC = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = BFD945DA244DC5E80012785A;
+					};
 					BFD945DA244DC5E80012785A = {
 						CreatedOnToolsVersion = 11.4.1;
 					};
 					BFD945F0244DC5EB0012785A = {
-						CreatedOnToolsVersion = 11.4.1;
-						TestTargetID = BFD945DA244DC5E80012785A;
-					};
-					BFD945FB244DC5EB0012785A = {
 						CreatedOnToolsVersion = 11.4.1;
 						TestTargetID = BFD945DA244DC5E80012785A;
 					};
@@ -389,12 +390,19 @@
 			targets = (
 				BFD945DA244DC5E80012785A /* iOSEngineerCodeCheck */,
 				BFD945F0244DC5EB0012785A /* iOSEngineerCodeCheckTests */,
-				BFD945FB244DC5EB0012785A /* iOSEngineerCodeCheckUITests */,
+				99F9999428929C9F00D1E6FC /* iOSEngineerCodeCheckUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		99F9999328929C9F00D1E6FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BFD945D9244DC5E80012785A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -409,13 +417,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		BFD945EF244DC5EB0012785A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BFD945FA244DC5EB0012785A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -486,7 +487,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOSEngineerCodeCheck/Pods-iOSEngineerCodeCheck-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8FF7B74E8D4F5978B25C4E15 /* [CP] Check Pods Manifest.lock */ = {
+		6D67F783F5A72FFE654F7631 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -529,6 +530,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		99F9999128929C9F00D1E6FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99F9999828929C9F00D1E6FC /* iOSEngineerCodeCheckUITests.swift in Sources */,
+				99F9999A28929C9F00D1E6FC /* iOSEngineerCodeCheckUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BFD945D7244DC5E80012785A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -558,26 +568,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BFD945F8244DC5EB0012785A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BFD94601244DC5EC0012785A /* iOSEngineerCodeCheckUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		99F9999C28929C9F00D1E6FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BFD945DA244DC5E80012785A /* iOSEngineerCodeCheck */;
+			targetProxy = 99F9999B28929C9F00D1E6FC /* PBXContainerItemProxy */;
+		};
 		BFD945F3244DC5EB0012785A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = BFD945DA244DC5E80012785A /* iOSEngineerCodeCheck */;
 			targetProxy = BFD945F2244DC5EB0012785A /* PBXContainerItemProxy */;
-		};
-		BFD945FE244DC5EB0012785A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BFD945DA244DC5E80012785A /* iOSEngineerCodeCheck */;
-			targetProxy = BFD945FD244DC5EB0012785A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -601,6 +603,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		99F9999D28929C9F00D1E6FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C003B0DF9696DD1D8B1E41C7 /* Pods-iOSEngineerCodeCheckUITests.debug.xcconfig */;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4KX39VZ9JG;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Toshiki-Yanagimoto.iOSEngineerCodeCheckUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = iOSEngineerCodeCheck;
+			};
+			name = Debug;
+		};
+		99F9999E28929C9F00D1E6FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 228BF9337A8F4F77F0F8F6AB /* Pods-iOSEngineerCodeCheckUITests.release.xcconfig */;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4KX39VZ9JG;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Toshiki-Yanagimoto.iOSEngineerCodeCheckUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = iOSEngineerCodeCheck;
+			};
+			name = Release;
+		};
 		BFD94603244DC5EC0012785A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -799,51 +841,18 @@
 			};
 			name = Release;
 		};
-		BFD9460C244DC5EC0012785A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C003B0DF9696DD1D8B1E41C7 /* Pods-iOSEngineerCodeCheckUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S7G9J68NLX;
-				INFOPLIST_FILE = iOSEngineerCodeCheckUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = jp.yumemi.iOSEngineerCodeCheckUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = iOSEngineerCodeCheck;
-			};
-			name = Debug;
-		};
-		BFD9460D244DC5EC0012785A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 228BF9337A8F4F77F0F8F6AB /* Pods-iOSEngineerCodeCheckUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S7G9J68NLX;
-				INFOPLIST_FILE = iOSEngineerCodeCheckUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = jp.yumemi.iOSEngineerCodeCheckUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = iOSEngineerCodeCheck;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		99F9999F28929C9F00D1E6FC /* Build configuration list for PBXNativeTarget "iOSEngineerCodeCheckUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				99F9999D28929C9F00D1E6FC /* Debug */,
+				99F9999E28929C9F00D1E6FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		BFD945D6244DC5E80012785A /* Build configuration list for PBXProject "iOSEngineerCodeCheck" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -867,15 +876,6 @@
 			buildConfigurations = (
 				BFD94609244DC5EC0012785A /* Debug */,
 				BFD9460A244DC5EC0012785A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BFD9460B244DC5EC0012785A /* Build configuration list for PBXNativeTarget "iOSEngineerCodeCheckUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BFD9460C244DC5EC0012785A /* Debug */,
-				BFD9460D244DC5EC0012785A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
