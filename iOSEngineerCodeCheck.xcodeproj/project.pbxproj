@@ -28,6 +28,8 @@
 		99F9999828929C9F00D1E6FC /* iOSEngineerCodeCheckUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F9999728929C9F00D1E6FC /* iOSEngineerCodeCheckUITests.swift */; };
 		99F9999A28929C9F00D1E6FC /* iOSEngineerCodeCheckUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F9999928929C9F00D1E6FC /* iOSEngineerCodeCheckUITestsLaunchTests.swift */; };
 		99F999A22892B9BB00D1E6FC /* QueryShareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F999A12892B9BB00D1E6FC /* QueryShareManager.swift */; };
+		99F999A52892D99900D1E6FC /* Gifu in Frameworks */ = {isa = PBXBuildFile; productRef = 99F999A42892D99900D1E6FC /* Gifu */; };
+		99F999A92892DA5900D1E6FC /* LoadingGif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 99F999A82892DA5900D1E6FC /* LoadingGif.gif */; };
 		BF0A658D244F2A3B00280FA6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A658C244F2A3B00280FA6 /* DetailViewController.swift */; };
 		BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945DE244DC5E80012785A /* AppDelegate.swift */; };
 		BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945E0244DC5E80012785A /* SceneDelegate.swift */; };
@@ -79,6 +81,7 @@
 		99F9999728929C9F00D1E6FC /* iOSEngineerCodeCheckUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSEngineerCodeCheckUITests.swift; sourceTree = "<group>"; };
 		99F9999928929C9F00D1E6FC /* iOSEngineerCodeCheckUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSEngineerCodeCheckUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		99F999A12892B9BB00D1E6FC /* QueryShareManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryShareManager.swift; sourceTree = "<group>"; };
+		99F999A82892DA5900D1E6FC /* LoadingGif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LoadingGif.gif; sourceTree = "<group>"; };
 		AF22DBE10D50A590A79DB835 /* Pods-iOSEngineerCodeCheckTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSEngineerCodeCheckTests.debug.xcconfig"; path = "Target Support Files/Pods-iOSEngineerCodeCheckTests/Pods-iOSEngineerCodeCheckTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BD0EE8EC94DF4813A143087E /* Pods-iOSEngineerCodeCheck.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSEngineerCodeCheck.release.xcconfig"; path = "Target Support Files/Pods-iOSEngineerCodeCheck/Pods-iOSEngineerCodeCheck.release.xcconfig"; sourceTree = "<group>"; };
 		BF0A658C244F2A3B00280FA6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +117,7 @@
 				99F3AF8728901CF4009927E8 /* PKHUD in Frameworks */,
 				99F3AF6C288D5280009927E8 /* Kingfisher in Frameworks */,
 				5BEF55D819CBA82736D46B69 /* Pods_iOSEngineerCodeCheck.framework in Frameworks */,
+				99F999A52892D99900D1E6FC /* Gifu in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +271,7 @@
 				BFD945DE244DC5E80012785A /* AppDelegate.swift */,
 				BFD945E0244DC5E80012785A /* SceneDelegate.swift */,
 				BFD945E4244DC5E80012785A /* Main.storyboard */,
+				99F999A82892DA5900D1E6FC /* LoadingGif.gif */,
 				BFD945E7244DC5EB0012785A /* Assets.xcassets */,
 				BFD945E9244DC5EB0012785A /* LaunchScreen.storyboard */,
 				BFD945EC244DC5EB0012785A /* Info.plist */,
@@ -335,6 +340,7 @@
 			packageProductDependencies = (
 				99F3AF6B288D5280009927E8 /* Kingfisher */,
 				99F3AF8628901CF4009927E8 /* PKHUD */,
+				99F999A42892D99900D1E6FC /* Gifu */,
 			);
 			productName = iOSEngineerCodeCheck;
 			productReference = BFD945DB244DC5E80012785A /* iOSEngineerCodeCheck.app */;
@@ -394,6 +400,7 @@
 			packageReferences = (
 				99F3AF6A288D5280009927E8 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				99F3AF8528901CF3009927E8 /* XCRemoteSwiftPackageReference "PKHUD" */,
+				99F999A32892D99800D1E6FC /* XCRemoteSwiftPackageReference "Gifu" */,
 			);
 			productRefGroup = BFD945DC244DC5E80012785A /* Products */;
 			projectDirPath = "";
@@ -421,6 +428,7 @@
 				BFD945EB244DC5EB0012785A /* LaunchScreen.storyboard in Resources */,
 				99F3AF7C288EBFB2009927E8 /* SearchListCell.xib in Resources */,
 				99F3AF7E288ED6FC009927E8 /* DetailViewController.storyboard in Resources */,
+				99F999A92892DA5900D1E6FC /* LoadingGif.gif in Resources */,
 				BFD945E8244DC5EB0012785A /* Assets.xcassets in Resources */,
 				BFD945E6244DC5E80012785A /* Main.storyboard in Resources */,
 				99F3AF8228901276009927E8 /* SearchListViewController.storyboard in Resources */,
@@ -911,6 +919,14 @@
 				minimumVersion = 5.4.0;
 			};
 		};
+		99F999A32892D99800D1E6FC /* XCRemoteSwiftPackageReference "Gifu" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kaishin/Gifu.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.2.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -923,6 +939,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 99F3AF8528901CF3009927E8 /* XCRemoteSwiftPackageReference "PKHUD" */;
 			productName = PKHUD;
+		};
+		99F999A42892D99900D1E6FC /* Gifu */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99F999A32892D99800D1E6FC /* XCRemoteSwiftPackageReference "Gifu" */;
+			productName = Gifu;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
