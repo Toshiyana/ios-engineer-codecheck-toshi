@@ -65,7 +65,7 @@ final class DetailViewController: UIViewController {
     private func setupUI() {
         if let repoItem = repoItem {
             titleLabel.text = repoItem.fullName
-            iconImageView.kf.setImage(with: repoItem.owner.avatarUrl)
+            iconImageView.kf.setImage(with: URL(string: repoItem.owner.avatarUrl))
         }
 
         tableView.register(RepoInformationCell.nib(), forCellReuseIdentifier: RepoInformationCell.identifier)
@@ -117,18 +117,10 @@ final class DetailViewController: UIViewController {
             button.tag = 1
             button.tintColor = .systemRed
             button.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-
-            //            button.backgroundColor = .systemOrange
-            //            button.setTitle("お気に入りから削除", for: .normal)
-            //            button.setTitleColor(.white, for: .normal)
         } else {
             button.tag = 0
             button.tintColor = .darkGray
             button.setImage(UIImage(systemName: "heart"), for: .normal)
-
-            //            button.backgroundColor = .systemGray5
-            //            button.setTitle("お気に入りに追加", for: .normal)
-            //            button.setTitleColor(.black, for: .normal)
         }
     }
 }
