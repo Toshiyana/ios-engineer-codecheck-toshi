@@ -16,6 +16,8 @@ disabled_rules:
 - conditional_returns_on_newline # guard文でreturnを一行で書きたいため
 - force_cast # 必ずダウンキャストできる場合、as!を用いたいため
 - identifier_name # 2文字で命名したいため
+- function_body_length
+- cyclomatic_complexity
 
 # defaultルール以外にopt-inから採用するルール
 opt_in_rules:
