@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Favorite View Controller-->
+        <!--お気に入り-->
         <scene sceneID="In2-5I-nEb">
             <objects>
                 <viewController id="cud-DO-iIO" customClass="FavoriteViewController" customModule="iOSEngineerCodeCheck" customModuleProvider="target" sceneMemberID="viewController">
@@ -30,11 +30,11 @@
                             <constraint firstItem="nF0-hf-4Dl" firstAttribute="leading" secondItem="1NS-Qp-KN3" secondAttribute="leading" id="tFj-m3-6UW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="8Xb-iB-Xgy"/>
+                    <navigationItem key="navigationItem" title="お気に入り" id="8Xb-iB-Xgy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zku-Ws-aBl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="408.69565217391306" y="994.41964285714278"/>
+            <point key="canvasLocation" x="1318.840579710145" y="994.41964285714278"/>
         </scene>
     </scenes>
     <resources>
