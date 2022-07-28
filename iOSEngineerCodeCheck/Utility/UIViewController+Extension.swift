@@ -7,11 +7,19 @@
 //
 
 import UIKit
+import SafariServices
 
 extension UIViewController {
     func showAlertView(title: String?, message: String?) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert, animated: true)
+    }
+}
+
+extension UIViewController {
+    func presentSafariViewController(for url: URL) {
+        let safariController = SFSafariViewController(url: url)
+        present(safariController, animated: true, completion: nil)
     }
 }
