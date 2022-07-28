@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct GitHubResponse: Codable {
+struct GitHubResponse: Codable, Equatable {
     //    let totalCount: Int
     //    let incompleteResults: Bool
     let items: [RepoItem]
@@ -19,7 +19,7 @@ struct GitHubResponse: Codable {
     }
 }
 
-struct RepoItem: Codable, Identifiable {
+struct RepoItem: Codable, Identifiable, Equatable {
     let id: Int
     //    let nodeId: String
     //    let name: String
@@ -183,7 +183,7 @@ struct RepoItem: Codable, Identifiable {
     }
 }
 
-struct Owner: Codable, Identifiable {
+struct Owner: Codable, Identifiable, Equatable {
     //    let login: String
     let id: Int
     //    let nodeId: String
@@ -225,7 +225,7 @@ struct Owner: Codable, Identifiable {
     }
 }
 
-struct License: Codable {
+struct License: Codable, Equatable {
     let key: String
     let name: String
     let spdxId: String
