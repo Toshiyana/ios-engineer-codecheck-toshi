@@ -1,46 +1,53 @@
-# 株式会社ゆめみ iOS エンジニアコードチェック課題
+# 株式会社ゆめみ iOS エンジニアコードチェック課題（オリジナル仕様書）
 
-## 概要
+## こだわったポイント
+- ページネーション機能
+- お気に入りのリポジトリを登録できる機能の実装。
+- 実務で利用ケースが多いとされる MVVM + RxSwift を採用。
+- Kickstarter iOSを参考に、ViewModelのInputs, Outputsを意識した。(https://github.com/kickstarter/ios-oss)
+- issue, 機能ごとにブランチを切ってプルリクを行い、開発を進めた。
+- 検索で通信エラー時にアラートを表示。
+- ごく一部、UnitTestを記述。
 
-本プロジェクトは株式会社ゆめみ（以下弊社）が、弊社に iOS エンジニアを希望する方に出す課題のベースプロジェクトです。本課題が与えられた方は、下記の概要を詳しく読んだ上で課題を取り組んでください。
+## デザイン面でこだわったポイント
+- PKHUDライブラリを用いて、検索時の通信中にオリジナルのインジケータを表示した。
+- ページネーション時はTableViewの下にインジケータを表示し、検索時とページネーション時で異なるをインジケータを用いた。
+- リポジトリの詳細画面をUIScrollViewを用いて見やすくした。
 
-## アプリ仕様
+## 開発環境
+### 開発環境
+Xcode 13.4.1
 
-本アプリは GitHub のリポジトリーを検索するアプリです。
+### 開発言語
+Swift 5.6.1
 
-![動作イメージ](README_Images/app.gif)
+## 動作対象端末・OS
+### 動作対象OS
+iOS 15.5
 
-### 環境
+## 開発期間
+7日間 (7/22 ~ 7/29)
 
-- IDE：基本最新の安定版（本概要更新時点では Xcode 13.0）
-- Swift：基本最新の安定版（本概要更新時点では Swift 5.5）
-- 開発ターゲット：基本最新の安定版（本概要更新時点では iOS 15.0）
-- サードパーティーライブラリーの利用：オープンソースのものに限り制限しない
+## アプリケーション機能
 
-### 動作
-
-1. 何かしらのキーワードを入力
-2. GitHub API（`search/repositories`）でリポジトリーを検索し、結果一覧を概要（リポジトリ名）で表示
-3. 特定の結果を選択したら、該当リポジトリの詳細（リポジトリ名、オーナーアイコン、プロジェクト言語、Star 数、Watcher 数、Fork 数、Issue 数）を表示
-
-## 課題取り組み方法
-
-Issues を確認した上、本プロジェクトを [**Duplicate** してください](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/duplicating-a-repository)（Fork しないようにしてください。必要ならプライベートリポジトリーにしても大丈夫です）。今後のコミットは全てご自身のリポジトリーで行ってください。
-
-コードチェックの課題 Issue は全て [`課題`](https://github.com/yumemi/ios-engineer-codecheck/milestone/1) Milestone がついており、難易度に応じて Label が [`初級`](https://github.com/yumemi/ios-engineer-codecheck/issues?q=is%3Aopen+is%3Aissue+label%3A初級+milestone%3A課題)、[`中級`](https://github.com/yumemi/ios-engineer-codecheck/issues?q=is%3Aopen+is%3Aissue+label%3A中級+milestone%3A課題+) と [`ボーナス`](https://github.com/yumemi/ios-engineer-codecheck/issues?q=is%3Aopen+is%3Aissue+label%3Aボーナス+milestone%3A課題+) に分けられています。課題の必須／選択は下記の表とします：
-
-|   | 初級 | 中級 | ボーナス
-|--:|:--:|:--:|:--:|
-| 新卒／未経験者 | 必須 | 選択 | 選択 |
-| 中途／経験者 | 必須 | 必須 | 選択 |
+### 機能一覧
+- 検索してリポジトリを一覧表示（ページネーション機能あり）
+- リポジトリ詳細画面の表示
+- リポジトリのお気に入り登録
+- リポジトリ詳細画面からWebサイトにアクセス
 
 
-課題 Issueをご自身のリポジトリーにコピーするGitHub Actionsをご用意しております。  
-[こちらのWorkflow](./.github/workflows/copy-issues.yml)を[手動でトリガーする](https://docs.github.com/ja/actions/managing-workflow-runs/manually-running-a-workflow)ことでコピーできますのでご活用下さい。
+### 使用しているAPI,SDK,ライブラリなど
+- SwiftLint: コードフォーマットを整えるため。
+- RxSwift, RxCocoa (CocoaPods): 値の変化を検知、非同期の処理の簡潔化のため。
+- Moya/RxSwift (CocoaPods): API通信をカプセル化するため。
+- Kingfisher (SPM): Webから画像をダウンロードしてキャッシュするため。
+- PKHUD (SPM): 通信中のインジケータを表示するため。
+- Realm, RealmSwift (SPM): お気に入り情報をローカルに保存するため。
+- Gifu (SPM): Gifを読み込むために利用。
 
-課題が完成したら、リポジトリーのアドレスを教えてください。
-
-## 参考記事
-
-提出された課題の評価ポイントに関しては、[こちらの記事](https://qiita.com/lovee/items/d76c68341ec3e7beb611)に詳しく書かれてありますので、ぜひご覧ください。
-ライブラリの利用に関しては [こちらの記事](https://qiita.com/ykws/items/b951a2e24ca85013e722)も参照ください。
+## 今後実装すべき機能
+- リポジトリ一覧画面で、お気に入り登録したリポジトリのセルにお気に入りマークをつける。
+- TopicでGitHubのリポジトリを検索（自分自身がよくTopicのキーワード検索でスター数の多いリポジトリを学習の参考にするため。）
+- アニメーション
+- UnitTestの追記
