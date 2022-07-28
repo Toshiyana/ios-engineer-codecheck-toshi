@@ -115,7 +115,7 @@ final class SearchListViewController: UIViewController {
     }
 
     private func setupLoadingHud(visible: Bool) {
-        let imageSize = CGSize(width: view.frame.width / 2, height: view.frame.width / 2)
+        let imageSize = CGSize(width: 180, height: 180)
         let imageLoadingProgressView = GIFImageView(frame: CGRect(origin: CGPoint.zero, size: imageSize))
         imageLoadingProgressView.animate(withGIFNamed: "LoadingGif")
 
