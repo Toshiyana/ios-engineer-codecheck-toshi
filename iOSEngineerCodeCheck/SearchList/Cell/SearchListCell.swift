@@ -18,8 +18,8 @@ final class SearchListCell: UITableViewCell {
     @IBOutlet private weak var avatarImageView: UIImageView!
     @IBOutlet private weak var repoNameLabel: UILabel!
 
-    func configure(avatarImageUrl: URL, repoName: String) {
-        avatarImageView.kf.setImage(with: avatarImageUrl)
+    func configure(avatarImageUrl: String, repoName: String) {
+        avatarImageView.kf.setImage(with: URL(string: avatarImageUrl))
         repoNameLabel.text = repoName
     }
 }
