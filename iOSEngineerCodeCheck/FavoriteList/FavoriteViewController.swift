@@ -22,6 +22,11 @@ final class FavoriteViewController: UIViewController {
         setupViewModel()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.updateFavorite.accept(Void())
+    }
+
     private func setupUI() {
         // NavBarの色を変える
         guard let navBar = navigationController?.navigationBar else {
@@ -34,8 +39,10 @@ final class FavoriteViewController: UIViewController {
             fatalError("NavigationController does not exist.")
         }
         TabBarUtility.set(tabBar: tabBar)
+
+        tableView.register(SearchListCell.nib(), forCellReuseIdentifier: SearchListCell.identifier)
     }
-    
+
     private func setupViewModel() {
         // MARK: - Inputs
         tableView.rx.itemSelected
@@ -67,9 +74,9 @@ final class FavoriteViewController: UIViewController {
 // MARK: - Custom Binder
 extension FavoriteViewController {
     private var transitionToRepoItemDetail: Binder<RepoItemObject> {
-        return Binder(self) { vc, repoItem in
-            let detailVC = UIStoryboard(name: "DetailViewController", bundle: nil).instantiateInitialViewController() as! DetailViewController
-            detailVC.repoItem = repoItem
+        return Binder(self) { vc, repoItemObject in
+            let detailVC = UIStoryboard(name: "FavoriteDetailViewController", bundle: nil).instantiateInitialViewController() as! FavoriteDetailViewController
+            detailVC.repoItemObject = repoItemObject
             vc.navigationController?.pushViewController(detailVC, animated: true)
         }
     }
