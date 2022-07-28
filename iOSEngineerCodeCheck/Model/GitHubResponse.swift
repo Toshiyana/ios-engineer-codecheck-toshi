@@ -187,7 +187,7 @@ struct Owner: Codable, Identifiable, Equatable {
     //    let login: String
     let id: Int
     //    let nodeId: String
-    let avatarUrl: URL
+    let avatarUrl: String
     //    let gravatarId: String
     //    let url: URL
     //    let htmlUrl: URL
