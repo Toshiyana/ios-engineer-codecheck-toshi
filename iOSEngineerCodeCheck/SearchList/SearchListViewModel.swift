@@ -140,11 +140,11 @@ final class SearchListViewModel: SearchListViewModelInputs, SearchListViewModelO
             .disposed(by: disposeBag)
 
         itemSelected
-            .subscribe { [weak self] event in
-                guard let strongSelf = self, let indexPath = event.element else { return }
+            .subscribe(onNext: { [weak self] indexPath in
+                guard let strongSelf = self else { return }
                 let repoItem = strongSelf.repoItems.value[indexPath.row]
                 strongSelf.transitionToRepoItemDetail.accept(repoItem)
-            }
+            })
             .disposed(by: disposeBag)
     }
 }
