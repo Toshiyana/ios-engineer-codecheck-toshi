@@ -45,6 +45,12 @@ final class SearchListViewController: UIViewController {
         }
         ColorUtility.changeNabBarColor(navBar: navBar, color: .darkGray)
 
+        // iOS15用のTabBarを設定
+        guard let tabBar = tabBarController?.tabBar else {
+            fatalError("NavigationController does not exist.")
+        }
+        TabBarUtility.set(tabBar: tabBar)
+
         searchBar.placeholder = "リポジトリ名で検索"
         tableView.register(SearchListCell.nib(), forCellReuseIdentifier: SearchListCell.identifier)
     }
