@@ -34,6 +34,10 @@
 		99F999B02892EF9600D1E6FC /* FavoriteViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99F999AF2892EF9600D1E6FC /* FavoriteViewController.storyboard */; };
 		99F999B22892FEB900D1E6FC /* ColorUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F999B12892FEB900D1E6FC /* ColorUtility.swift */; };
 		99F999B42892FF1B00D1E6FC /* TabBarUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F999B32892FF1B00D1E6FC /* TabBarUtility.swift */; };
+		99F999B8289313DC00D1E6FC /* RepoInformationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F999B6289313DB00D1E6FC /* RepoInformationCell.swift */; };
+		99F999B9289313DC00D1E6FC /* RepoInformationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99F999B7289313DC00D1E6FC /* RepoInformationCell.xib */; };
+		99F999BC2893241F00D1E6FC /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 99F999BB2893241F00D1E6FC /* Realm */; };
+		99F999BE2893241F00D1E6FC /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 99F999BD2893241F00D1E6FC /* RealmSwift */; };
 		BF0A658D244F2A3B00280FA6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A658C244F2A3B00280FA6 /* DetailViewController.swift */; };
 		BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945DE244DC5E80012785A /* AppDelegate.swift */; };
 		BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945E0244DC5E80012785A /* SceneDelegate.swift */; };
@@ -90,6 +94,8 @@
 		99F999AF2892EF9600D1E6FC /* FavoriteViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FavoriteViewController.storyboard; sourceTree = "<group>"; };
 		99F999B12892FEB900D1E6FC /* ColorUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtility.swift; sourceTree = "<group>"; };
 		99F999B32892FF1B00D1E6FC /* TabBarUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarUtility.swift; sourceTree = "<group>"; };
+		99F999B6289313DB00D1E6FC /* RepoInformationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoInformationCell.swift; sourceTree = "<group>"; };
+		99F999B7289313DC00D1E6FC /* RepoInformationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoInformationCell.xib; sourceTree = "<group>"; };
 		AF22DBE10D50A590A79DB835 /* Pods-iOSEngineerCodeCheckTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSEngineerCodeCheckTests.debug.xcconfig"; path = "Target Support Files/Pods-iOSEngineerCodeCheckTests/Pods-iOSEngineerCodeCheckTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BD0EE8EC94DF4813A143087E /* Pods-iOSEngineerCodeCheck.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSEngineerCodeCheck.release.xcconfig"; path = "Target Support Files/Pods-iOSEngineerCodeCheck/Pods-iOSEngineerCodeCheck.release.xcconfig"; sourceTree = "<group>"; };
 		BF0A658C244F2A3B00280FA6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -122,10 +128,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99F999BE2893241F00D1E6FC /* RealmSwift in Frameworks */,
 				99F3AF8728901CF4009927E8 /* PKHUD in Frameworks */,
 				99F3AF6C288D5280009927E8 /* Kingfisher in Frameworks */,
 				5BEF55D819CBA82736D46B69 /* Pods_iOSEngineerCodeCheck.framework in Frameworks */,
 				99F999A52892D99900D1E6FC /* Gifu in Frameworks */,
+				99F999BC2893241F00D1E6FC /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,6 +180,7 @@
 				99F3AF65288C32D0009927E8 /* Moya */,
 				99F3AF73288EB457009927E8 /* Error */,
 				99F999A02892B8F700D1E6FC /* Manager */,
+				99F999BF2893244300D1E6FC /* Realm */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -190,6 +199,7 @@
 		99F3AF70288D9A39009927E8 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				99F999B52893139B00D1E6FC /* Cell */,
 				99F3AF7D288ED6FC009927E8 /* DetailViewController.storyboard */,
 				BF0A658C244F2A3B00280FA6 /* DetailViewController.swift */,
 			);
@@ -256,6 +266,22 @@
 				99F999AB2892EE0200D1E6FC /* FavoriteViewController.swift */,
 			);
 			path = Favorite;
+			sourceTree = "<group>";
+		};
+		99F999B52893139B00D1E6FC /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				99F999B6289313DB00D1E6FC /* RepoInformationCell.swift */,
+				99F999B7289313DC00D1E6FC /* RepoInformationCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		99F999BF2893244300D1E6FC /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Realm;
 			sourceTree = "<group>";
 		};
 		BFD945D2244DC5E80012785A = {
@@ -361,6 +387,8 @@
 				99F3AF6B288D5280009927E8 /* Kingfisher */,
 				99F3AF8628901CF4009927E8 /* PKHUD */,
 				99F999A42892D99900D1E6FC /* Gifu */,
+				99F999BB2893241F00D1E6FC /* Realm */,
+				99F999BD2893241F00D1E6FC /* RealmSwift */,
 			);
 			productName = iOSEngineerCodeCheck;
 			productReference = BFD945DB244DC5E80012785A /* iOSEngineerCodeCheck.app */;
@@ -421,6 +449,7 @@
 				99F3AF6A288D5280009927E8 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				99F3AF8528901CF3009927E8 /* XCRemoteSwiftPackageReference "PKHUD" */,
 				99F999A32892D99800D1E6FC /* XCRemoteSwiftPackageReference "Gifu" */,
+				99F999BA2893241F00D1E6FC /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = BFD945DC244DC5E80012785A /* Products */;
 			projectDirPath = "";
@@ -450,6 +479,7 @@
 				99F3AF7C288EBFB2009927E8 /* SearchListCell.xib in Resources */,
 				99F3AF7E288ED6FC009927E8 /* DetailViewController.storyboard in Resources */,
 				99F999A92892DA5900D1E6FC /* LoadingGif.gif in Resources */,
+				99F999B9289313DC00D1E6FC /* RepoInformationCell.xib in Resources */,
 				BFD945E8244DC5EB0012785A /* Assets.xcassets in Resources */,
 				BFD945E6244DC5E80012785A /* Main.storyboard in Resources */,
 				99F3AF8228901276009927E8 /* SearchListViewController.storyboard in Resources */,
@@ -584,6 +614,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				99F999A22892B9BB00D1E6FC /* QueryShareManager.swift in Sources */,
+				99F999B8289313DC00D1E6FC /* RepoInformationCell.swift in Sources */,
 				99F3AF9128919283009927E8 /* UIViewController+Extension.swift in Sources */,
 				BFD945E3244DC5E80012785A /* SearchListViewController.swift in Sources */,
 				99F3AF8C2891593D009927E8 /* GitHubAPIProtocol.swift in Sources */,
@@ -951,6 +982,14 @@
 				minimumVersion = 3.2.2;
 			};
 		};
+		99F999BA2893241F00D1E6FC /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.28.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -968,6 +1007,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 99F999A32892D99800D1E6FC /* XCRemoteSwiftPackageReference "Gifu" */;
 			productName = Gifu;
+		};
+		99F999BB2893241F00D1E6FC /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99F999BA2893241F00D1E6FC /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		99F999BD2893241F00D1E6FC /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99F999BA2893241F00D1E6FC /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
