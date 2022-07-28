@@ -21,5 +21,11 @@ final class FavoriteViewController: UIViewController {
             fatalError("NavigationController does not exist.")
         }
         ColorUtility.changeNabBarColor(navBar: navBar, color: .darkGray)
+
+        // iOS15用のTabBarを設定
+        guard let tabBar = tabBarController?.tabBar else {
+            fatalError("NavigationController does not exist.")
+        }
+        TabBarUtility.set(tabBar: tabBar)
     }
 }
