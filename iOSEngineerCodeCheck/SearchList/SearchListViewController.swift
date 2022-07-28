@@ -39,6 +39,12 @@ final class SearchListViewController: UIViewController {
     }
 
     private func setupUI() {
+        // NavBarの色を変える
+        guard let navBar = navigationController?.navigationBar else {
+            fatalError("NavigationController does not exist.")
+        }
+        ColorUtility.changeNabBarColor(navBar: navBar, color: .darkGray)
+
         searchBar.placeholder = "リポジトリ名で検索"
         tableView.register(SearchListCell.nib(), forCellReuseIdentifier: SearchListCell.identifier)
     }
