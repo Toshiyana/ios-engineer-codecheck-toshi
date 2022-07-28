@@ -26,7 +26,7 @@ struct RepoItem: Codable, Identifiable, Equatable {
     let fullName: String
     //    let `private`: Bool
     let owner: Owner
-    //    let htmlUrl: URL
+    let htmlUrl: URL
     //    let description: String
     //    let fork: Bool
     //    let url: URL
@@ -107,7 +107,7 @@ struct RepoItem: Codable, Identifiable, Equatable {
         case fullName = "full_name"
         //        case `private`
         case owner
-        //        case htmlUrl = "html_url"
+        case htmlUrl = "html_url"
         //        case description
         //        case fork
         //        case url
