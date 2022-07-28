@@ -7,3 +7,20 @@
 //
 
 import Foundation
+
+final class QueryShareManager {
+    private var queries: [String: Any] = [:]
+    static let shared = QueryShareManager()
+
+    func addQuery(key: String, value: String?) {
+        if value != nil {
+            QueryShareManager.shared.queries[key] = value
+        } else {
+            QueryShareManager.shared.queries[key] = nil
+        }
+    }
+
+    func getQuery() -> [String: Any] {
+        return QueryShareManager.shared.queries
+    }
+}
