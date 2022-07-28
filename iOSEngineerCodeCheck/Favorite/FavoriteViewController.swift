@@ -11,5 +11,15 @@ import UIKit
 final class FavoriteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        setupUI()
+    }
+
+    private func setupUI() {
+        // NavBarの色を変える
+        guard let navBar = navigationController?.navigationBar else {
+            fatalError("NavigationController does not exist.")
+        }
+        ColorUtility.changeNabBarColor(navBar: navBar, color: .darkGray)
     }
 }
