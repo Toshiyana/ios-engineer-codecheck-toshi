@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import PKHUD
+import Gifu
 
 final class SearchListViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
@@ -114,7 +115,11 @@ final class SearchListViewController: UIViewController {
     }
 
     private func setupLoadingHud(visible: Bool) {
-        PKHUD.sharedHUD.contentView = PKHUDSystemActivityIndicatorView()
+        let imageSize = CGSize(width: view.frame.width / 2, height: view.frame.width / 2)
+        let imageLoadingProgressView = GIFImageView(frame: CGRect(origin: CGPoint.zero, size: imageSize))
+        imageLoadingProgressView.animate(withGIFNamed: "LoadingGif")
+
+        PKHUD.sharedHUD.contentView = imageLoadingProgressView
         visible ? PKHUD.sharedHUD.show(onView: view) : PKHUD.sharedHUD.hide()
     }
 }
