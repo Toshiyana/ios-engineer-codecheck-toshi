@@ -18,6 +18,7 @@ disabled_rules:
 - identifier_name # 2文字で命名したいため
 - function_body_length
 - cyclomatic_complexity
+- block_based_kvo
 
 # defaultルール以外にopt-inから採用するルール
 opt_in_rules:
