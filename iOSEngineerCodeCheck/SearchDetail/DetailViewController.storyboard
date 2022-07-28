@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v5Z-s3-k5i">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="631.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="620"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h4M-dG-Vy2">
                                                 <rect key="frame" x="25" y="50" width="325" height="325"/>
@@ -29,27 +29,23 @@
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="inr-XL-Wel">
-                                                <rect key="frame" x="46.5" y="442.5" width="282" height="31"/>
+                                                <rect key="frame" x="72.5" y="442.5" width="230" height="19.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vak-CV-sAN">
-                                                        <rect key="frame" x="0.0" y="0.0" width="121" height="31"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="102.5" height="19.5"/>
+                                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="お気に入り " image="heart" catalog="system">
+                                                        <state key="normal" title=" お気に入り" image="heart" catalog="system">
                                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
-                                                        <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system" imagePlacement="trailing" title="お気に入り ">
-                                                            <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </buttonConfiguration>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eeI-9Z-yJi">
-                                                        <rect key="frame" x="161" y="0.0" width="121" height="31"/>
+                                                        <rect key="frame" x="142.5" y="0.0" width="87.5" height="19.5"/>
+                                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="アクセス " image="arrow.up.right.square" catalog="system">
+                                                        <state key="normal" title=" アクセス" image="arrow.up.right.square" catalog="system">
                                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
-                                                        <buttonConfiguration key="configuration" style="plain" image="arrow.up.right.square" catalog="system" imagePlacement="trailing" title="アクセス ">
-                                                            <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </buttonConfiguration>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -60,7 +56,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="AsO-h7-cuv">
-                                                <rect key="frame" x="25" y="493.5" width="325" height="128"/>
+                                                <rect key="frame" x="25" y="482" width="325" height="128"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="128" id="edp-eV-DxS"/>
