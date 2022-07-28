@@ -52,6 +52,8 @@ final class SearchListViewController: UIViewController {
         TabBarUtility.set(tabBar: tabBar)
 
         searchBar.placeholder = "リポジトリ名で検索"
+        searchBar.backgroundImage = UIImage() // 上下の線を除去
+
         tableView.register(SearchListCell.nib(), forCellReuseIdentifier: SearchListCell.identifier)
     }
 
