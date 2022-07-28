@@ -76,6 +76,10 @@ final class SearchListViewController: UIViewController {
                 strongSelf.showAlertView(title: "エラー", message: "通信エラーが発生しました")
             })
             .disposed(by: disposeBag)
+
+        viewModel.outputs.deselectRow
+            .bind(to: deselectRow)
+            .disposed(by: disposeBag)
     }
 
     private func setupLoadingHud(visible: Bool) {
@@ -91,6 +95,12 @@ extension SearchListViewController {
             let detailVC = UIStoryboard(name: "DetailViewController", bundle: nil).instantiateInitialViewController() as! DetailViewController
             detailVC.repoItem = repoItem
             vc.navigationController?.pushViewController(detailVC, animated: true)
+        }
+    }
+
+    private var deselectRow: Binder<IndexPath> {
+        return Binder(self) { vc, indexPath in
+            vc.tableView.deselectRow(at: indexPath, animated: true)
         }
     }
 }

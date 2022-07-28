@@ -21,6 +21,7 @@ protocol SearchListViewModelOutputs {
     var transitionToRepoItemDetail: PublishRelay<RepoItem> { get }
     var isLoadingHudAvailable: PublishRelay<Bool> { get }
     var errorResult: PublishRelay<Error> { get }
+    var deselectRow: PublishRelay<IndexPath> { get }
 }
 
 protocol SearchListViewModelType {
@@ -41,11 +42,14 @@ final class SearchListViewModel: SearchListViewModelInputs, SearchListViewModelO
     var transitionToRepoItemDetail = PublishRelay<RepoItem>()
     var isLoadingHudAvailable = PublishRelay<Bool>()
     var errorResult = PublishRelay<Error>()
+    var deselectRow = PublishRelay<IndexPath>()
 
     private let githubAPI: GitHubAPIProtocol
 
     init(githubAPI: GitHubAPIProtocol) {
         self.githubAPI = githubAPI
+
+        deselectRow = itemSelected
 
         searchButtonClicked
             .withLatestFrom(searchBarText)
