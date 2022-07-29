@@ -92,7 +92,7 @@ struct RepoItem: Codable, Identifiable, Equatable {
     //    let allowForking: Bool
     //    let isTemplate: Bool
     //    let webCommitSignoffRequired: Bool
-    let topics: [String]
+    //    let topics: [String]
     //    let visibility: String
     //    let forks: Int
     //    let openIssues: Int
@@ -173,7 +173,7 @@ struct RepoItem: Codable, Identifiable, Equatable {
         //        case allowForking = "allow_forking"
         //        case isTemplate = "is_template"
         //        case webCommitSignoffRequired = "web_commit_signoff_required"
-        case topics
+        //        case topics
         //        case visibility
         //        case forks
         //        case openIssues
